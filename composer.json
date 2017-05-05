@@ -1,0 +1,29 @@
+{
+  "name": "miqueladell/entesa",
+  "type": "wordpress-theme",
+  "license": "MIT",
+  "description": "Entesa's WordPress Theme",
+  "homepage": "https://github.com/MiquelAdell/entesa",
+  "authors": [
+    {
+      "name": "Miquel Adell",
+      "email": "miquel@miqueladell.com",
+      "homepage": "http://miqueladell.com"
+    }
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "repositories":[
+       {
+           "type":"composer",
+           "url":"https://wpackagist.org"
+       }
+   ],
+  "require": {
+    "php": ">=5.4.0",
+    "composer/installers": ">=1.0",
+    "kint-php/kint": "^2.0",
+    "jjgrainger/posttypes": "^1.1"
+  }
+}
