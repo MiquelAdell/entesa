@@ -154,7 +154,7 @@ gulp.task('browser-sync', function() {
 // Run:
 // gulp watch-bs
 // Starts watcher with browser-sync. Browser-sync reloads page automatically on your browser
-gulp.task('watch-bs', ['browser-sync', 'watch', 'minify-css', 'images'], function () { });
+gulp.task('watch-bs', ['browser-sync', 'watch', 'minify-css'], function () { });
 
 // Run:
 // gulp scripts.
@@ -248,16 +248,6 @@ gulp.task('dist', ['clean-dist'], function() {
 // Deleting any file inside the /src folder
 gulp.task('clean-dist', function () {
   return del(['dist/**/*',]);
-});
-
-// compress
-gulp.task('images', function () {
-	return gulp.src('src/images/*')
-	.pipe(imagemin({
-		progressive: true,
-		use: [pngquant()]
-	}))
-	.pipe(gulp.dest('dist/images/'));
 });
 
 // Run
