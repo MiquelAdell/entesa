@@ -8,7 +8,14 @@
         <?php if ( 'container' == $container ) : ?>
             <div class="container">
         <?php endif; ?>
-            <?php wp_nav_menu( array( 'theme_location' => 'logos-menu' ) ); ?>
+            <!-- <?php wp_nav_menu( array( 'theme_location' => 'logos-menu' ) ); ?> -->
+            <?php wp_nav_menu(
+                array(
+                    'theme_location'  => 'logos-menu',
+                    'menu_class'      => 'navbar-nav',
+                    'menu_id'         => 'logos-menu',
+                )
+            ); ?>
         <?php if ( 'container' == $container ) : ?>
             </div><!-- .container -->
         <?php endif; ?>

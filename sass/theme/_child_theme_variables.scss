@@ -15,7 +15,15 @@ $color-highlight: transparentize($brand-primary,0.2);
 $color-highlight-active: $brand-primary;
 $color-highlight-inactive: darken($brand-primary,10%);
 
-$color-highlight-inverse: transparentize(white,0.2);
-$color-highlight-inverse-active: white;
-$color-highlight-inverse-inactive: transparentize(white,0.3);
-$text-color-inverse: transparentize(white,0.3);
+$brand-inverse-text-base-color: white;
+$color-highlight-inverse: transparentize($brand-inverse-text-base-color,0.2);
+$color-highlight-inverse-active: $brand-inverse-text-base-color;
+$color-highlight-inverse-inactive: transparentize($brand-inverse-text-base-color,0.3);
+$text-color-inverse: transparentize($brand-inverse-text-base-color,0.3);
+
+
+$gray-dark:                 #464a4c !default;
+$gray:                      #636c72 !default;
+$gray-light:                #eceeef !default;
+$gray-lighter:              #f7f7f9 !default;
+$gray-lightest:             #fefefe !default;

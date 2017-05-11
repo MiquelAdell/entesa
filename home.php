@@ -28,7 +28,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			<li class="slide1" style="background-image:url('http://entesa.dev/wp-content/uploads/2017/05/torre-de-l-aigua.jpg')"></li>
 			<li class="slide2" style="background-image:url('http://entesa.dev/wp-content/uploads/2017/05/paisatge.jpg')"></li>
 			<li class="slide3" style="background-image:url('http://entesa.dev/wp-content/uploads/2017/05/campanar.jpg')"></li>
-			<li class="slide4" style="background-image:url('http://entesa.dev/wp-content/uploads/2017/05/gent2.jpg')"></li>
+			<li class="slide4" style="background-image:url('http://entesa.dev/wp-content/uploads/2017/05/gent.jpg')"></li>
 		</ul>
 		<div class="container">
 			<a class="logo" href="/">L'Entesa per Sabadell</a>
