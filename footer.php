@@ -13,7 +13,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php get_sidebar( 'footerfull' ); ?>
 
-<div class="wrapper" id="wrapper-footer">
+<div class="wrapper bg-inverse" id="wrapper-footer">
 
 	<div class="<?php echo esc_html( $container ); ?>">
 

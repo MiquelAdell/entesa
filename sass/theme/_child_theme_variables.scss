@@ -9,10 +9,13 @@ $highlight-font: 'UniversLTStd', sans-serif;
 
 $brand-primary:         hsla(346, 92%, 39%, 1);
 
+
+$text-color: transparentize(black,0.3);
 $color-highlight: transparentize($brand-primary,0.2);
 $color-highlight-active: $brand-primary;
 $color-highlight-inactive: darken($brand-primary,10%);
 
-$color-highlight-inverse: transparentize(lighten($brand-primary,59%),0.2);
-$color-highlight-inverse-active: lighten($brand-primary,59%);
-$color-highlight-inverse-inactive: transparentize(lighten($brand-primary,59%),0.3);
+$color-highlight-inverse: transparentize(white,0.2);
+$color-highlight-inverse-active: white;
+$color-highlight-inverse-inactive: transparentize(white,0.3);
+$text-color-inverse: transparentize(white,0.3);

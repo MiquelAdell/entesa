@@ -1,5 +1,9 @@
 body {
 	font-family: $base-font;
+	color: $text-color;
+	.bg-inverse {
+		color: $text-color-inverse;
+	}
 }
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {

@@ -1,6 +1,7 @@
 @import "resets";
 @import "hero";
 @import "navbar";
+@import "footer";
 .home {
 	.wrapper {
 		padding-top: 0;
@@ -9,4 +10,9 @@
 
 
 article + article {
+	margin-top: 4em;
+}
+
+aside + aside {
+	margin-top: 4em;
 }

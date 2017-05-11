@@ -20,7 +20,6 @@ jQuery( document ).ready(function( $ ) {
     };
 
     var Utils = new Utils();
-    console.log("test");
     $(window).scroll(function() {
         var isElementInView = Utils.isElementInView($('.hero'), false);
 

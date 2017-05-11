@@ -9233,7 +9233,10 @@ h1.navbar-brand a:hover {
   display: block; }
 
 body {
-  font-family: "BookmanBT-Roman", serif; }
+  font-family: "BookmanBT-Roman", serif;
+  color: rgba(0, 0, 0, 0.7); }
+  body .bg-inverse {
+    color: rgba(255, 255, 255, 0.7); }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -9243,13 +9246,13 @@ a {
   transition: color 0.5s ease;
   color: rgba(191, 8, 51, 0.8); }
   .bg-inverse a {
-    color: rgba(255, 245, 247, 0.8); }
+    color: rgba(255, 255, 255, 0.8); }
 
 a:hover {
   text-decoration: none;
   color: #bf0833; }
   .bg-inverse a:hover {
-    color: #fff5f7; }
+    color: white; }
 
 article a:visited {
   color: #8e0626; }
@@ -9367,7 +9370,7 @@ article a:visited {
     background-size: contain;
     height: 20vw;
     line-height: 20vw;
-    color: #fff5f7;
+    color: white;
     z-index: 10;
     font-weight: bold;
     max-width: 1000px;
@@ -9409,8 +9412,9 @@ article a:visited {
 
 .navbar.secondary {
   z-index: 6;
-  background-color: rgba(66, 69, 70, 0.8) !important;
-  margin-top: -106px; }
+  background: linear-gradient(rgba(66, 69, 70, 0), #424546) !important;
+  padding-top: 100px;
+  margin-top: -206px; }
 
 #content {
   padding-top: 100px; }
@@ -9427,12 +9431,24 @@ article a:visited {
 .menu-item {
   float: none;
   display: block;
-  text-transform: uppercase;
   font-family: "UniversLTStd", sans-serif;
   font-weight: 300;
   margin: 0 1em;
   line-height: 1em;
   font-size: 1.5em; }
+  .navbar--fixed .menu-item {
+    margin: 0 0.5em 0 0; }
+    .navbar--fixed .menu-item:after {
+      line-height: 1em;
+      content: "|";
+      font-family: "UniversLTStd", sans-serif;
+      margin-left: 0.5em;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1em;
+      position: relative;
+      top: -1px; }
+    .navbar--fixed .menu-item:last-child:after {
+      content: ''; }
   .primary .menu-item {
     line-height: 56px;
     margin-top: 8px; }
@@ -9463,7 +9479,7 @@ article a:visited {
   margin: 1em auto 2em; }
   .menu-enllacos-container:before {
     content: "participem de:";
-    color: rgba(255, 245, 247, 0.8);
+    color: rgba(255, 255, 255, 0.8);
     font-family: "UniversLTStd", sans-serif;
     text-align: center;
     width: 100%;
@@ -9481,3 +9497,9 @@ article a:visited {
 
 .home .wrapper {
   padding-top: 0; }
+
+article + article {
+  margin-top: 4em; }
+
+aside + aside {
+  margin-top: 4em; }

@@ -45,8 +45,10 @@
 }
 .navbar.secondary {
 	z-index: 6;
-	background-color: transparentize(lighten(#292b2c,10%),0.2) !important;
-	margin-top: -106px;
+	background: linear-gradient(transparentize(lighten(#292b2c,10%),1),transparentize(lighten(#292b2c,10%),0) ) !important;
+
+	padding-top: 100px;
+	margin-top: -206px;
 }
 
 #content {
@@ -65,10 +67,25 @@
 .menu-item {
 	float: none;
 	display: block;
-	text-transform: uppercase;
 	font-family: $highlight-font;
 	font-weight: 300;
 	margin: 0 1em;
+	.navbar--fixed & {
+		margin: 0 0.5em 0 0;
+		&:after {
+			line-height: 1em;
+			content: "|";
+			font-family: $highlight-font;
+			margin-left:0.5em;
+			color: $color-highlight-inverse;
+			font-size: 1em;
+			position: relative;
+			top: -1px;
+		}
+		&:last-child:after{
+		  content: '';
+		}
+	}
 	line-height: 1em;
 	.primary &{
 		line-height: 56px;
