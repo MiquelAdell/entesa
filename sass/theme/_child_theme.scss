@@ -1,7 +1,12 @@
+@import "resets";
 @import "hero";
 @import "navbar";
 .home {
 	.wrapper {
 		padding-top: 0;
 	}
+}
+
+
+article + article {
 }

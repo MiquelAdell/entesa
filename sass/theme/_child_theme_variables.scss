@@ -4,6 +4,15 @@
 // As example you find one of the most important Bootstrap variable below: $brand-primary.
 // Thats the ugly Bootstrap blue used for all the links, primary buttons etc.
 // Just add your color code here, compile the theme.scss file to change this color everywhere
+$base-font: 'BookmanBT-Roman', serif;
+$highlight-font: 'UniversLTStd', sans-serif;
 
+$brand-primary:         hsla(346, 92%, 39%, 1);
 
-$brand-primary:         #bf0832; 
+$color-highlight: transparentize($brand-primary,0.2);
+$color-highlight-active: $brand-primary;
+$color-highlight-inactive: darken($brand-primary,10%);
+
+$color-highlight-inverse: transparentize(lighten($brand-primary,59%),0.2);
+$color-highlight-inverse-active: lighten($brand-primary,59%);
+$color-highlight-inverse-inactive: transparentize(lighten($brand-primary,59%),0.3);

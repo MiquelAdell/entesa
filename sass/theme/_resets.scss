@@ -1,0 +1,27 @@
+body {
+	font-family: $base-font;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: $highlight-font;
+}
+
+
+a {
+	transition: color 0.5s ease;
+	color: $color-highlight;
+	.bg-inverse & {
+		color: $color-highlight-inverse;
+	}
+}
+a:hover {
+	text-decoration: none;
+	color: $color-highlight-active;
+	.bg-inverse & {
+		color: $color-highlight-inverse-active;
+	}
+}
+
+article a:visited {
+	color: $color-highlight-inactive;
+}

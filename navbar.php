@@ -4,7 +4,18 @@
     <a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content',
     'understrap' ); ?></a>
 
-    <nav class="navbar navbar-toggleable-md  navbar-inverse bg-inverse">
+    <nav class="navbar navbar-toggleable-md  navbar-inverse bg-inverse secondary">
+        <?php if ( 'container' == $container ) : ?>
+            <div class="container">
+        <?php endif; ?>
+            <?php wp_nav_menu( array( 'theme_location' => 'logos-menu' ) ); ?>
+        <?php if ( 'container' == $container ) : ?>
+            </div><!-- .container -->
+        <?php endif; ?>
+    </nav>
+
+
+    <nav class="navbar navbar-toggleable-md  navbar-inverse bg-inverse primary">
 
     <?php if ( 'container' == $container ) : ?>
         <div class="container">
@@ -32,22 +43,19 @@
                     the_custom_logo();
                 } ?><!-- end custom logo -->
 
-            <div id="navbarNavDropdown" class="collapse navbar-collapse">
-                <!-- The WordPress Menu goes here -->
-                <?php wp_nav_menu(
-                    array(
-                        'theme_location'  => 'primary',
-                        'menu_class'      => 'navbar-nav',
-                        'fallback_cb'     => '',
-                        'menu_id'         => 'main-menu',
-                        'walker'          => new WP_Bootstrap_Navwalker(),
-                    )
-                ); ?>
-                <?php if ( !function_exists('last_navigation_element') || !last_navigation_element("Last Navigation Element") ) : ?><?php endif;?>
-
-                <!-- logo menu -->
-                <?php wp_nav_menu( array( 'theme_location' => 'logos-menu' ) ); ?>
-            </div>
+            <!-- The WordPress Menu goes here -->
+            <?php wp_nav_menu(
+                array(
+                    'theme_location'  => 'primary',
+                    'container_class' => 'collapse navbar-collapse',
+                    'container_id'    => 'navbarNavDropdown',
+                    'menu_class'      => 'navbar-nav',
+                    'fallback_cb'     => '',
+                    'menu_id'         => 'main-menu',
+                    'walker'          => new WP_Bootstrap_Navwalker(),
+                )
+            ); ?>
+            <?php if ( !function_exists('last_navigation_element') || !last_navigation_element("Last Navigation Element") ) : ?><?php endif;?>
 
         <?php if ( 'container' == $container ) : ?>
         </div><!-- .container -->
@@ -55,5 +63,6 @@
 
 
     </nav><!-- .site-navigation -->
+
 
 </div><!-- .wrapper-navbar end -->
