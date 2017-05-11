@@ -38,6 +38,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
 var del = require('del');
 var cleanCSS = require('gulp-clean-css');
+var autoprefixer = require('gulp-autoprefixer');
+
 
 function swallowError(self, error) {
     console.log(error.toString())
@@ -50,6 +52,7 @@ function swallowError(self, error) {
 // Prepare the min.css for production (with 2 pipes to be sure that "child-theme.css" == "child-theme.min.css")
 gulp.task('scss-for-prod', function() {
     var source =  gulp.src('./sass/*.scss')
+        //.pipe(autoprefixer({browsers: ['last 2 versions'],cascade: false}))
         .pipe(plumber({ errorHandler: function (error) { swallowError(this, error); } }))
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sass());
@@ -75,10 +78,12 @@ gulp.task('scss-for-prod', function() {
 // Prepare the child-theme.css for the development environment
 gulp.task('scss-for-dev', function() {
     gulp.src('./sass/*.scss')
+
         .pipe(plumber({ errorHandler: function (error) { swallowError(this, error); } }))
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sass())
         .pipe(sourcemaps.write(undefined, { sourceRoot: null }))
+        .pipe(autoprefixer({browsers: ['last 2 versions'],cascade: false}))
         .pipe(gulp.dest('./css'))
 });
 
@@ -91,6 +96,7 @@ gulp.task('watch-scss', ['browser-sync'], function () {
 // Compiles SCSS files in CSS
 gulp.task('sass',['minify-css'], function () {
     var stream = gulp.src('./sass/*.scss')
+        //.pipe(autoprefixer({browsers: ['last 2 versions'],cascade: false}))
         .pipe(plumber({ errorHandler: function (error) { swallowError(this, error); } }))
         .pipe(sass())
         .pipe(gulp.dest('./css'))
@@ -162,13 +168,11 @@ gulp.task('watch-bs', ['browser-sync', 'watch', 'minify-css'], function () { });
 gulp.task('scripts', function() {
     var scripts = [
         basePaths.dev + 'js/tether.js', // Must be loaded before BS4
-
         // Start - All BS4 stuff
         basePaths.dev + 'js/bootstrap4/bootstrap.js',
-
         // End - All BS4 stuff
-
-        basePaths.dev + 'js/skip-link-focus-fix.js'
+        basePaths.dev + 'js/skip-link-focus-fix.js',
+        basePaths.dev + 'js/entesa.js'
     ];
   gulp.src(scripts)
     .pipe(concat('child-theme.min.js'))

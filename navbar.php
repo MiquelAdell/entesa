@@ -32,19 +32,23 @@
                     the_custom_logo();
                 } ?><!-- end custom logo -->
 
-            <!-- The WordPress Menu goes here -->
-            <?php wp_nav_menu(
-                array(
-                    'theme_location'  => 'primary',
-                    'container_class' => 'collapse navbar-collapse',
-                    'container_id'    => 'navbarNavDropdown',
-                    'menu_class'      => 'navbar-nav',
-                    'fallback_cb'     => '',
-                    'menu_id'         => 'main-menu',
-                    'walker'          => new WP_Bootstrap_Navwalker(),
-                )
-            ); ?>
-            <?php if ( !function_exists('last_navigation_element') || !last_navigation_element("Last Navigation Element") ) : ?><?php endif;?>
+            <div id="navbarNavDropdown" class="collapse navbar-collapse">
+                <!-- The WordPress Menu goes here -->
+                <?php wp_nav_menu(
+                    array(
+                        'theme_location'  => 'primary',
+                        'menu_class'      => 'navbar-nav',
+                        'fallback_cb'     => '',
+                        'menu_id'         => 'main-menu',
+                        'walker'          => new WP_Bootstrap_Navwalker(),
+                    )
+                ); ?>
+                <?php if ( !function_exists('last_navigation_element') || !last_navigation_element("Last Navigation Element") ) : ?><?php endif;?>
+
+                <!-- logo menu -->
+                <?php wp_nav_menu( array( 'theme_location' => 'logos-menu' ) ); ?>
+            </div>
+
         <?php if ( 'container' == $container ) : ?>
         </div><!-- .container -->
         <?php endif; ?>

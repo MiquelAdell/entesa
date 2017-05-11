@@ -9243,7 +9243,10 @@ h1.navbar-brand a:hover {
       height: 66vh; } }
   .hero ul {
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0; }
   .hero li {
     position: absolute;
     opacity: 0;
@@ -9267,8 +9270,8 @@ h1.navbar-brand a:hover {
 
 @keyframes fade1 {
   /*
-            95 -> 30
-            */
+			95 -> 30
+			*/
   0% {
     opacity: 1; }
   20% {
@@ -9282,8 +9285,8 @@ h1.navbar-brand a:hover {
 
 @keyframes fade2 {
   /*
-            20 - 55
-            */
+			20 - 55
+			*/
   0% {
     opacity: 0; }
   20% {
@@ -9299,8 +9302,8 @@ h1.navbar-brand a:hover {
 
 @keyframes fade3 {
   /*
-            45 - 80
-            */
+			45 - 80
+			*/
   0% {
     opacity: 0; }
   45% {
@@ -9316,8 +9319,8 @@ h1.navbar-brand a:hover {
 
 @keyframes fade4 {
   /*
-            70 - 05
-            */
+			70 - 05
+			*/
   5% {
     opacity: 0; }
   70% {
@@ -9326,41 +9329,57 @@ h1.navbar-brand a:hover {
     opacity: 1; }
   95% {
     opacity: 1; } }
-    .hero li .parallax {
-      perspective: 1px;
-      height: 100vh;
-      overflow-x: hidden;
-      overflow-y: auto; }
-    .hero li .parallax__layer {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0; }
-    .hero li .parallax__layer--base {
-      transform: translateZ(0); }
-    .hero li .parallax__layer--back {
-      transform: translateZ(-1px); }
-    .hero li .logo {
-      background-image: url(../images/logo_entesa.svg);
-      position: absolute;
+  .hero .logo {
+    background-image: url(../images/logo_entesa.svg);
+    position: absolute;
+    width: auto;
+    position: absolute;
+    bottom: -2vw;
+    font-size: 5vw;
+    padding-left: 22vw;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 20vw;
+    line-height: 20vw;
+    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0.2vw 0.2vh black;
+    font-weight: bold;
+    max-width: 1000px; }
+    @media (min-width: 1200px) {
+      .hero .logo {
+        font-size: 56px; } }
+
+.navbar {
+  padding-top: 0;
+  transition: height 0.5s ease;
+  height: 40px; }
+  .navbar--fixed .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    height: 80px; }
+  .navbar .navbar-brand {
+    display: none; }
+    .navbar--fixed .navbar .navbar-brand {
+      display: block; }
+    .navbar .navbar-brand img {
+      height: 100px;
       width: auto;
-      margin: 0 auto;
-      position: absolute;
-      bottom: -2vw;
-      font-size: 5vw;
-      margin-left: 15%;
-      padding-left: 22vw;
-      background-position: left;
-      background-repeat: no-repeat;
-      background-size: contain;
-      height: 20vw;
-      line-height: 20vw;
-      color: rgba(255, 255, 255, 0.9);
-      color: rgba(255, 255, 255, 0.9);
-      text-shadow: 0.2vw 0.2vh black;
-      font-weight: bold;
-      background-color: red; }
+      margin-bottom: -40%;
+      margin-top: -20%; }
+
+#content {
+  padding-top: 100px; }
+
+.navbar--fixed #content {
+  padding-top: 200px; }
+
+.navbar--fixed .hero {
+  opacity: 0; }
 
 .home .wrapper {
   padding-top: 0; }
