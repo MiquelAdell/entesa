@@ -9501,7 +9501,26 @@ article a:visited {
   align-self: flex-end; }
 
 .navbar-collapse.show {
-  width: 100%; }
+  background-color: rgba(139, 133, 132, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-top: 57px; }
+  .navbar-collapse.show .navbar-nav {
+    flex-direction: column; }
+    .navbar-collapse.show .navbar-nav > .menu-item {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1em;
+      padding: 0.5em 0;
+      text-align: center; }
+      .navbar-collapse.show .navbar-nav > .menu-item:hover > .dropdown-menu {
+        float: none;
+        background: transparent;
+        border: 0;
+        text-align: center; }
 
 .home .wrapper {
   padding-top: 0; }
