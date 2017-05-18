@@ -5385,6 +5385,13 @@ jQuery( document ).ready(function( $ ) {
 
     }
 
+    function enableScroll() {
+      $('html, body').css({
+          overflow: 'auto',
+          height: 'auto'
+      });
+    }
+
     Utils.prototype = {
         constructor: Utils,
         isElementInView: function (element, fullyInView) {
@@ -5410,5 +5417,15 @@ jQuery( document ).ready(function( $ ) {
         } else {
             $('body').addClass('navbar--fixed');
         }
+    });
+
+    scrolled_after_toggle = false;
+    $('.navbar-toggler').click(function(){
+        if($('html').hasClass('fixed-scroll')){
+            $('html').removeClass('fixed-scroll');
+        } else {
+            $('html').addClass('fixed-scroll');
+        }
+
     });
 });
