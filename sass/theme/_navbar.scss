@@ -39,9 +39,12 @@
 
 	}
 }
-
-.fixed-row > div {
-	transition: width 0.5s linear;
+.fixed-row {
+	position: relative;
+	z-index: 5;
+	& > div {
+		transition: width 0.5s linear;
+	}
 }
 
 .navbar-brand {

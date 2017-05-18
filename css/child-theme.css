@@ -9264,7 +9264,8 @@ article a:visited {
   height: 25vh;
   position: relative;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  overflow: hidden; }
   @media (min-width: 768px) {
     .hero {
       height: 50vh; } }
@@ -9362,19 +9363,20 @@ article a:visited {
     position: absolute;
     width: auto;
     position: absolute;
-    bottom: 75px;
-    font-size: 5vw;
-    padding-left: 22vw;
+    bottom: -3vmin;
+    font-size: 5vmin;
+    padding-left: 32vmin;
     background-position: left;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 20vw;
-    line-height: 20vw;
-    color: white;
-    z-index: 10;
-    font-weight: bold;
+    height: 30vmin;
+    line-height: 35vmin;
+    color: #fff;
+    z-index: 0;
+    font-weight: 700;
     max-width: 1000px;
-    max-height: 300px; }
+    max-height: 300px;
+    margin-top: 20%; }
     @media (min-width: 1200px) {
       .hero .logo {
         font-size: 56px; } }
@@ -9408,8 +9410,11 @@ article a:visited {
         flex: 0 0 41.66667%;
         max-width: 41.66667%; } }
 
-.fixed-row > div {
-  transition: width 0.5s linear; }
+.fixed-row {
+  position: relative;
+  z-index: 5; }
+  .fixed-row > div {
+    transition: width 0.5s linear; }
 
 .navbar-brand {
   position: absolute; }

@@ -6,6 +6,7 @@
 	position: relative;
 	padding: 0;
 	margin: 0;
+	overflow: hidden;
 	@media (min-width: 768px) {
 		height: 50vh;
 	}
@@ -90,19 +91,20 @@
 		position: absolute;
 		width: auto;
 		position: absolute;
-		bottom: 75px;
-		font-size: 5vw;
-		padding-left: 22vw;
+		bottom: -3vmin;
+		font-size: 5vmin;
+		padding-left: 32vmin;
 		background-position: left;
 		background-repeat: no-repeat;
 		background-size: contain;
-		height: 20vw;
-		line-height: 20vw;
-		color: $color-highlight-inverse-active;
-		z-index: 10;
-		font-weight: bold;
+		height: 30vmin;
+		line-height: 35vmin;
+		color: #fff;
+		z-index: 0;
+		font-weight: 700;
 		max-width: 1000px;
-    	max-height: 300px;
+		max-height: 300px;
+		margin-top: 20%;
 		@media (min-width: 1200px) {
 			font-size: 56px;
 		}

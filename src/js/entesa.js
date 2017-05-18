@@ -28,7 +28,7 @@ jQuery( document ).ready(function( $ ) {
 
     var Utils = new Utils();
     $(window).scroll(function() {
-        var isElementInView = Utils.isElementInView($('.hero'), false);
+        var isElementInView = Utils.isElementInView($('.home-slider'), false);
 
         if (isElementInView) {
             $('body').removeClass('navbar--fixed');
