@@ -1,15 +1,15 @@
 <?php
 /**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package understrap
- */
+* The main template file.
+*
+* This is the most generic template file in a WordPress theme
+* and one of the two required files for a theme (the other being style.css).
+* It is used to display a page when nothing more specific matches a query.
+* E.g., it puts together the home page when no home.php file exists.
+* Learn more: http://codex.wordpress.org/Template_Hierarchy
+*
+* @package understrap
+*/
 
 get_header();
 
@@ -18,8 +18,19 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 ?>
 <?php if ( is_front_page() && is_home() ) : ?>
-  <?php get_template_part( 'global-templates/hero', 'none' ); ?>
+	<?php get_template_part( 'global-templates/hero', 'none' ); ?>
 <?php endif; ?>
+
+<?php if($_GET['secondary'] == 1) { ?>
+<style>
+	.wrapper-navbar {
+		background-color: hsla(218, 39%, 45%, 1);
+	}
+	.bg-inverse {
+	    background-color: hsla(218, 39%, 45%, 1)!important;
+	}
+</style>
+<?php } ?>
 
 <div class="wrapper" id="wrapper-index">
 
@@ -46,29 +57,34 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 			<main class="site-main" id="main">
 
-				<?php if ( have_posts() ) : ?>
+				<div class="row"><div class="col-12"><h2 class="fancy"><span>Notícies</span></h2></div></div>
 
-					<?php /* Start the Loop */ ?>
+				<div class="row">
+					<?php if ( have_posts() ) : ?>
+						<?php /* Start the Loop */ ?>
+						<?php while ( have_posts() ) : the_post(); ?>
+							<?php
 
-					<?php while ( have_posts() ) : the_post(); ?>
+							/*
+							* Include the Post-Format-specific template for the content.
+							* If you want to override this in a child theme, then include a file
+							* called content-___.php (where ___ is the Post Format name) and that will be used instead.
+							*/
+							?>
+							<div class="col-12 col-sm-6 newspiece-holder">
+								<?php
+								get_template_part( 'loop-templates/content', get_post_format() );
+								?>
+							</div>
 
-						<?php
+						<?php endwhile; ?>
 
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'loop-templates/content', get_post_format() );
-						?>
+					<?php else : ?>
 
-					<?php endwhile; ?>
+						<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
-				<?php else : ?>
-
-					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
-
-				<?php endif; ?>
+					<?php endif; ?>
+				</div>
 
 			</main><!-- #main -->
 
@@ -79,7 +95,6 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 		<!-- Do the right sidebar check -->
 		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
-
 			<?php get_sidebar( 'right' ); ?>
 
 		<?php endif; ?>

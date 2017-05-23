@@ -9257,6 +9257,9 @@ a:hover {
 article a:visited {
   color: #8e0626; }
 
+.newspiece-holder {
+  margin-bottom: 4em; }
+
 .hero {
   font-family: "UniversLTStd", sans-serif;
   font-weight: bold;
@@ -9516,7 +9519,7 @@ article a:visited {
     justify-content: center; }
 
 .dropdown-menu {
-  margin-top: -0.5em;
+  margin-top: 0em;
   min-width: 250px;
   padding: 1em; }
   .bg-inverse .dropdown-menu {
@@ -9563,8 +9566,26 @@ html.fixed-scroll {
 .home .wrapper {
   padding-top: 0; }
 
+#content {
+  padding-top: 3em; }
+
 article + article {
   margin-top: 4em; }
 
 aside + aside {
   margin-top: 4em; }
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover,
+.h1 a:hover, .h2 a:hover, .h3 a:hover, .h4 a:hover, .h5 a:hover, .h6 a:hover {
+  color: #f59b0a; }
+
+h2.fancy {
+  color: #f59b0a;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #f59b0a;
+  line-height: 0.1em;
+  margin: 0.5em 0 2em; }
+  h2.fancy span {
+    background: #fff;
+    padding: 0 10px; }

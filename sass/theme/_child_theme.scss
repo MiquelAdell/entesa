@@ -1,4 +1,5 @@
 @import "resets";
+@import "lists";
 @import "hero";
 @import "navbar";
 @import "footer";
@@ -9,10 +10,39 @@
 }
 
 
+#content {
+    padding-top: 3em;
+}
+
 article + article {
 	margin-top: 4em;
 }
 
 aside + aside {
 	margin-top: 4em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	a {
+		&:hover {
+			color: $brand-secondary;
+		}
+		// &:visited {
+		// 	color: $brand-primary;
+		// }
+	}
+}
+
+h2.fancy {
+	color: $brand-secondary;
+	width:100%;
+	text-align:center;
+	border-bottom: 1px solid $brand-secondary;
+	line-height:0.1em;
+	margin: 0.5em 0 2em;
+	span {
+		background:#fff;
+		padding:0 10px;
+	}
 }
