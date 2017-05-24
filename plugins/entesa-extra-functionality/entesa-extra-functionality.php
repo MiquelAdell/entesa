@@ -97,17 +97,16 @@ function entesa_highlights_init() {
 		if ($title) echo $beforetitle . '<h2 class="fancy"><span>'.$title.'</span></h2>' . $aftertitle;
 
 		$pq = new WP_Query(array( 'post_type' => $ptype, 'showposts' => $pshow ));
-		if( $pq->have_posts() ) :
-			?>
-			<ul>
-				<ul><?php while($pq->have_posts()) : $pq->the_post(); ?>
-					<li><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></li>
+		?>
+		<?php if( $pq->have_posts() ) : ?>
+				<ul>
+					<?php while($pq->have_posts()) : $pq->the_post(); ?>
+						<li><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></li>
+					<?php endwhile; ?>
 				</ul>
-			</ul>
-			<?php wp_reset_query();
-		endwhile; ?>
+			<?php wp_reset_query(); ?>
 
-	<?php endif; ?>
+		<?php endif; ?>
 
 	<!-- NEEDS FIX: to display link to full list of posts page
 	<?php $obj = get_post_type_object($ptype); ?>
