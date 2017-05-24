@@ -21,7 +21,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 	<?php get_template_part( 'global-templates/hero', 'none' ); ?>
 <?php endif; ?>
 
-<?php if($_GET['secondary'] == 1) { ?>
+<?php if(isset($_GET['secondary']) && $_GET['secondary'] == 1) { ?>
 <style>
 	.wrapper-navbar {
 		background-color: hsla(218, 39%, 45%, 1);
