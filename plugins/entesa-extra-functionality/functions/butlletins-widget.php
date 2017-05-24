@@ -1,14 +1,14 @@
 <?php
-function entesa_agenda_items_init() {
+function entesa_butlletins_init() {
 	if ( !function_exists( 'register_sidebar_widget' ))
 	return;
 
-	function entesa_agenda_items($args) {
+	function entesa_butlletins($args) {
 		global $post;
 		extract($args);
 
 		// These are our own options
-		$options = get_option( 'entesa_agenda_items' );
+		$options = get_option( 'entesa_butlletins' );
 		$title = $options['title']; // Widget title
 		$pshow = $options['pshow']; // Number of elements
 
@@ -20,7 +20,7 @@ function entesa_agenda_items_init() {
 
 		if ($title) echo $beforetitle . '<h2 class="fancy"><span>'.$title.'</span></h2>' . $aftertitle;
 
-		$pq = new WP_Query(array( 'post_type' => $ptype, 'showposts' => $pshow, 'category_name' => 'agenda' ));
+		$pq = new WP_Query(array( 'post_type' => $ptype, 'showposts' => $pshow, 'category_name' => 'Butlletí de l\'Entesa' ));
 		?>
 		<?php if( $pq->have_posts() ) : ?>
 			<ul>
@@ -29,14 +29,11 @@ function entesa_agenda_items_init() {
 						<header class="entry-header">
 							<h2>
 								<a href="<?php the_permalink(); ?>" rel="bookmark">
-									<span class="date">
-										<?=date_i18n('l j \d\e F Y', strtotime( get_field('event_date') ) ) ?>
-									</span>
+									<span><?php the_title(); ?></span>
 								</a>
 							</h2>
 						</header>
-
-						<p><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></p>
+						<?php echo get_the_post_thumbnail( $page->ID ); ?>
 					</li>
 				<?php endwhile; ?>
 			</ul>
@@ -46,7 +43,7 @@ function entesa_agenda_items_init() {
 
 		<!-- NEEDS FIX: to display link to full list of posts page
 		<?php $obj = get_post_type_object($ptype); ?>
-		<div class="agenda_items_icon"><a href="<?php site_url('/'.$obj->query_var); ?>" rel="bookmark"><?php _e( 'View all ' . $obj->labels->name . ' posts' ); ?>&rarr;</a></div>
+		<div class="butlletins_icon"><a href="<?php site_url('/'.$obj->query_var); ?>" rel="bookmark"><?php _e( 'View all ' . $obj->labels->name . ' posts' ); ?>&rarr;</a></div>
 		//-->
 
 		<?php
@@ -57,14 +54,14 @@ function entesa_agenda_items_init() {
 	/**
 	* Widget settings form function
 	*/
-	function entesa_agenda_items_control() {
+	function entesa_butlletins_control() {
 
 		// Get options
-		$options = get_option( 'entesa_agenda_items' );
+		$options = get_option( 'entesa_butlletins' );
 		// options exist? if not set defaults
 		if ( !is_array( $options ))
 		$options = array(
-			'title' => 'Agenda',
+			'title' => 'Butlleti',
 			'phead' => 'h2',
 			'ptype' => 'post',
 			'pshow' => '1'
@@ -73,7 +70,7 @@ function entesa_agenda_items_init() {
 		if ( $_POST['latest-cpt-submit'] ) {
 			$options['title'] = strip_tags( $_POST['latest-cpt-title'] );
 			$options['pshow'] = $_POST['latest-cpt-pshow'];
-			update_option( 'entesa_agenda_items', $options );
+			update_option( 'entesa_butlletins', $options );
 		}
 		// Get options for form fields to show
 		$title = $options['title'];
@@ -92,8 +89,8 @@ function entesa_agenda_items_init() {
 		<?php
 	}
 
-	wp_register_sidebar_widget( 'widget_agenda_items', __('Agenda','entesa'), 'entesa_agenda_items' );
-	wp_register_widget_control( 'widget_agenda_items', __('Agenda','entesa'), 'entesa_agenda_items_control', 300, 200 );
+	wp_register_sidebar_widget( 'widget_butlletins', __('Butlletins','entesa'), 'entesa_butlletins' );
+	wp_register_widget_control( 'widget_butlletins', __('Butlletins','entesa'), 'entesa_butlletins_control', 300, 200 );
 
 }
-add_action( 'widgets_init', 'entesa_agenda_items_init' );
+add_action( 'widgets_init', 'entesa_butlletins_init' );

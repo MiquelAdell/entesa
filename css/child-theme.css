@@ -9258,7 +9258,10 @@ article a:visited {
   color: #8e0626; }
 
 .grid h2 {
-  border-bottom: 1px solid #bf0833; }
+  border-bottom: 1px solid #bf0833;
+  transition: border .5s ease; }
+  .grid h2:hover {
+    border-bottom: 1px solid #f59b0a; }
 
 .grid .grid-item {
   padding: 0 1.5em 4.5em 1.5em;
@@ -9631,15 +9634,32 @@ h2.fancy {
     background: #fff;
     padding: 0 10px; }
 
-.entesa_highlights ul {
+.entesa_highlights ul,
+.entesa_butlletins ul,
+.entesa_agenda_items ul {
   margin: 0;
   padding: 0;
   list-style: none; }
-  .entesa_highlights ul li {
+  .entesa_highlights ul li,
+  .entesa_butlletins ul li,
+  .entesa_agenda_items ul li {
     padding: 0 0 4.5em 0; }
-    .entesa_highlights ul li h2 {
+    .entesa_highlights ul li h2,
+    .entesa_butlletins ul li h2,
+    .entesa_agenda_items ul li h2 {
       text-align: center;
-      border-bottom: 1px solid #bf0833; }
+      border-bottom: 1px solid #bf0833;
+      transition: border .5s ease; }
+      .entesa_highlights ul li h2:hover,
+      .entesa_butlletins ul li h2:hover,
+      .entesa_agenda_items ul li h2:hover {
+        border-bottom: 1px solid #f59b0a; }
+
+.entesa_agenda_items p {
+  text-align: center;
+  font-size: 1.25rem; }
+  .entesa_agenda_items p a {
+    color: inherit; }
 
 #full-screen-search {
   overflow: hidden !important;

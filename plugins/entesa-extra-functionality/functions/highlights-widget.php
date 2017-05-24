@@ -9,7 +9,8 @@ function entesa_highlights_init() {
 
 		// These are our own options
 		$options = get_option( 'entesa_highlights' );
-		$pshow = $options['pshow']; // Number of Tweets
+		$title = $options['title']; // Widget title
+		$pshow = $options['pshow']; // Number of elements
 
 		$beforetitle = '';
 		$aftertitle = '';
@@ -68,15 +69,19 @@ function entesa_highlights_init() {
 		);
 		// form posted?
 		if ( $_POST['latest-cpt-submit'] ) {
+			$options['title'] = strip_tags( $_POST['latest-cpt-title'] );
 			$options['pshow'] = $_POST['latest-cpt-pshow'];
 			update_option( 'entesa_highlights', $options );
 		}
 		// Get options for form fields to show
+		$title = $options['title'];
 		$pshow = $options['pshow'];
 
 		// The widget form fields
 		?>
-
+		<label for="latest-cpt-title"><?php echo __( 'Widget Title' ); ?>
+			<input id="latest-cpt-title" type="text" name="latest-cpt-title" size="30" value="<?php echo $title; ?>" />
+		</label>
 		<label for="latest-cpt-pshow"><?php echo __( 'Número de destacats a mostrar','entesa' ); ?>
 			<input id="latest-cpt-pshow" type="text" name="latest-cpt-pshow" size="2" value="<?php echo $pshow; ?>" />
 		</label>

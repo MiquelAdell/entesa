@@ -1,6 +1,10 @@
 .grid {
 	h2 {
 		border-bottom: 1px solid $brand-primary;
+		transition: border .5s ease;
+		&:hover {
+			border-bottom: 1px solid $brand-secondary;
+		}
 	}
 	.grid-item {
 		padding: 0 1.5em 4.5em 1.5em;
