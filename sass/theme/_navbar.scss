@@ -231,3 +231,17 @@ html.fixed-scroll {
 		margin-top: '-213px';
 	}
 }
+
+ .lastNavigationElement .trigger-search {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    z-index: 999999;
+    font-size: 1.25rem;
+    color: white;
+	transition: color 0.5s linear;
+	&:hover {
+		color: $brand-secondary;
+		cursor: pointer;
+	}
+}

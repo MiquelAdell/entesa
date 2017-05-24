@@ -9566,6 +9566,18 @@ html.fixed-scroll {
     height: '100%';
     margin-top: '-213px'; }
 
+.lastNavigationElement .trigger-search {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  z-index: 999999;
+  font-size: 1.25rem;
+  color: white;
+  transition: color 0.5s linear; }
+  .lastNavigationElement .trigger-search:hover {
+    color: #f59b0a;
+    cursor: pointer; }
+
 .home .wrapper {
   padding-top: 0; }
 

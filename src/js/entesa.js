@@ -51,4 +51,14 @@ jQuery( document ).ready(function( $ ) {
 		itemSelector: '.grid-item',
 		width: '50%'
 	});
+
+	// use the plugin full-screen-search-overlay to open a full screen search overlay
+	// this will not work if the plugin is not installed
+	$('.trigger-search').click(function(event){
+		if($( '#full-screen-search' ).length){
+			event.preventDefault();
+			$( '#full-screen-search' ).addClass( 'open' );
+			$( '#full-screen-search input' ).focus();
+		}
+	});
 });

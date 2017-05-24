@@ -31,7 +31,7 @@
                             'walker'          => new WP_Bootstrap_Navwalker(),
                         )
                     ); ?>
-                    <?php if ( !function_exists('last_navigation_element') || !last_navigation_element("Last Navigation Element") ) : ?><?php endif;?>
+
                 </nav><!-- .site-navigation -->
             </div>
             <div class="col-5 col-lg-5 pull-4 pull-lg-0">
@@ -45,6 +45,7 @@
                         )
                     ); ?>
                 </nav>
+<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Last Navigation Element") ) : ?><?php endif;?>
             </div>
         </div>
     </div>
