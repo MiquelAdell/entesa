@@ -29,6 +29,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 	.bg-inverse {
 	    background-color: hsla(218, 39%, 45%, 1)!important;
 	}
+	.bg-inverse .dropdown-menu {
+		background-color: hsla(218, 39%, 45%, 0.8)!important;
+	}
 </style>
 <?php } ?>
 
@@ -59,7 +62,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<div class="row"><div class="col-12"><h2 class="fancy"><span>Notícies</span></h2></div></div>
 
-				<div class="row">
+				<div class="row grid">
 					<?php if ( have_posts() ) : ?>
 						<?php /* Start the Loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
@@ -71,7 +74,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 							* called content-___.php (where ___ is the Post Format name) and that will be used instead.
 							*/
 							?>
-							<div class="col-12 col-sm-6 newspiece-holder">
+							<div class=" newspiece-holder grid-item">
 								<?php
 								get_template_part( 'loop-templates/content', get_post_format() );
 								?>

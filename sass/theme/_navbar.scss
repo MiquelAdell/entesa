@@ -122,10 +122,10 @@
 }
 
 #content {
-	padding-top: 100px;
+	// padding-top: 100px;
 }
 .navbar--fixed #content {
-	padding-top: 165px; //navbar-height * 2
+	padding-top: 100px; //navbar-height * 2
 }
 .navbar--fixed .hero {
 	opacity: 0;

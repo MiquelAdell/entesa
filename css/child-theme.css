@@ -9257,8 +9257,14 @@ a:hover {
 article a:visited {
   color: #8e0626; }
 
-.newspiece-holder {
-  margin-bottom: 4em; }
+.grid .grid-item {
+  padding: 0 1.5em 4.5em 1.5em;
+  width: 50%; }
+
+.grid:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 .hero {
   font-family: "UniversLTStd", sans-serif;
@@ -9477,11 +9483,8 @@ article a:visited {
             width: 100px;
             height: auto; } }
 
-#content {
-  padding-top: 100px; }
-
 .navbar--fixed #content {
-  padding-top: 165px; }
+  padding-top: 100px; }
 
 .navbar--fixed .hero {
   opacity: 0; }
