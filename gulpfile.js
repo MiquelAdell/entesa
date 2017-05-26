@@ -173,6 +173,7 @@ gulp.task('scripts', function() {
 		// End - All BS4 stuff
 		basePaths.dev + 'js/skip-link-focus-fix.js',
 		basePaths.dev + 'js/masonry.pkgd.min.js',
+		basePaths.dev + 'js/ekko-lightbox.js',
 		basePaths.dev + 'js/entesa.js'
 	];
   gulp.src(scripts)

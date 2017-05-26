@@ -25,15 +25,25 @@ function entesa_highlights_init() {
 		<?php if( $pq->have_posts() ) : ?>
 			<ul>
 				<?php while($pq->have_posts()) : $pq->the_post(); ?>
+					<?php
+					$link = get_field('link');
+					?>
+
 					<li>
 						<header class="entry-header">
 							<h2>
-								<a href="<?php the_permalink(); ?>" rel="bookmark">
+								<a
+								<?php if($link) { ?>
+									href="<?php echo $link ?>" rel="bookmark"
+								<?php } ?>
+								>
 									<span><?php the_title(); ?></span>
 								</a>
 							</h2>
 						</header>
-						<?php echo get_the_post_thumbnail( $page->ID ); ?>
+						<a href="<?php echo get_the_post_thumbnail_url( $page->ID ); ?>" data-toggle="lightbox">
+						    <?php echo get_the_post_thumbnail( $page->ID, 'medium_large'); ?>
+						</a>
 						<div class="entry-content"><?php echo the_content(); ?></div>
 					</li>
 				<?php endwhile; ?>

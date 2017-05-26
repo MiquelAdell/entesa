@@ -63,6 +63,16 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 				<div class="row"><div class="col-12"><h2 class="fancy"><span>Notícies</span></h2></div></div>
 
 				<div class="row grid">
+					<?php
+					$args = array(
+						'orderby'       => 'date',
+						'order' => 'DESC',
+						'posts_per_page' =>8,
+						'category__not_in' => array(56,11,28)
+					);
+					$posts = get_posts( $args );
+					?>
+
 					<?php if ( have_posts() ) : ?>
 						<?php /* Start the Loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
@@ -92,7 +102,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
+			<!-- <?php understrap_pagination(); ?> -->
+
+			<center><a class="btn btn-secondary understrap-read-more-link" href="//localhost:3000/2017/04/03/full-nomenclator/">Llegir més notícies</a></center>
 
 		</div><!-- #primary -->
 

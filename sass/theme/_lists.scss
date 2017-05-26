@@ -22,3 +22,10 @@
 	  clear: both;
 	}
 }
+.site-main {
+	&:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+}

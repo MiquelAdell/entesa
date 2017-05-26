@@ -18,6 +18,13 @@ a {
 		color: $color-highlight-inverse;
 	}
 }
+a:not([href]):not([tabindex]) {
+	color: $color-highlight;
+	&:hover {
+		color: $color-highlight;
+	}
+}
+
 a:hover {
 	text-decoration: none;
 	color: $color-highlight-active;

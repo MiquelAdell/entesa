@@ -61,4 +61,9 @@ jQuery( document ).ready(function( $ ) {
 			$( '#full-screen-search input' ).focus();
 		}
 	});
+
+	$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+	    event.preventDefault();
+	    $(this).ekkoLightbox();
+	});
 });
