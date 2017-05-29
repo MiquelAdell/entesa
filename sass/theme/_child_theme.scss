@@ -108,3 +108,10 @@ h2.fancy {
 	height: 100% !important;
 	overflow: visible !important;
 }
+
+.widget-area {
+	padding-left: inherit;
+	@media (min-width: 768px) {
+		padding-left: 48px;
+	}
+}
