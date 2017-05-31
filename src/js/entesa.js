@@ -66,4 +66,8 @@ jQuery( document ).ready(function( $ ) {
 	    event.preventDefault();
 	    $(this).ekkoLightbox();
 	});
+
+	window.sr = ScrollReveal({duration: 500,delay: 300});
+	sr.reveal('.participa-belt .row');
+	sr.reveal('.networks-section .col');
 });

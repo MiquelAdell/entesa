@@ -91,7 +91,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			<!-- The pagination component -->
 			<!-- <?php understrap_pagination(); ?> -->
 
-			<center><a class="btn btn-secondary understrap-read-more-link" href="//localhost:3000/2017/04/03/full-nomenclator/">Llegir més notícies</a></center>
+			<div class="text-center"><a class="btn btn-secondary understrap-read-more-link" href="//localhost:3000/2017/04/03/full-nomenclator/">Llegir més notícies</a></div>
 
 		</div><!-- #primary -->
 
@@ -104,6 +104,43 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 	</div><!-- .row -->
 
 </div><!-- Container end -->
+
+<div class="participa-belt-holder">
+	<div class="fluid-container participa-belt" data-parallax="scroll" data-image-src="<?=get_stylesheet_directory_uri()?>/images/participa.png">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 push-md-3">
+					<h2>Participa</h2>
+					<p>Terris humanas frigore sectamque militis arce convexi. Sine crescendo ab. Ab permisit sic colebat ventos super. Mortales inclusum. Gentes ignea. Neu fontes finxit undae frigore zephyro occiduo. Recessit aere aetas mutastis suis fulgura illis. Dei plagae solum glomeravit mutastis habentia spisso nova formaeque!</p>
+					<a class="btn btn-secondary understrap-read-more-link" href="mailto:info@entesa.org">Envian's un correu electrònic</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container networks-section">
+	<div class="row">
+		<div class="col col-md-6 text-center">
+			<h2 class="fancy"><span>YouTube</span></h2>
+			<p>Terris humanas frigore sectamque militis arce convexi. Sine crescendo ab. Ab permisit sic colebat ventos super. Mortales inclusum. Gentes ignea. Neu fontes finxit undae frigore zephyro occiduo. Recessit aere aetas mutastis suis fulgura illis. Dei plagae solum glomeravit mutastis habentia spisso nova formaeque!</p>
+			<iframe width="100%" height="255" src="http://www.youtube.com/embed?max-results=1&showinfo=0&rel=0&listType=user_uploads&list=entesapersabadell" frameborder="0" allowfullscreen></iframe>
+			<a class="btn btn-secondary understrap-read-more-link" href="mailto:info@entesa.org">Visita el nostre canal de YouTube</a>
+		</div>
+		<div class="col col-md-6 text-center">
+			<h2 class="fancy"><span>Foto Denúncia</span></h2>
+			<p>Terris humanas frigore sectamque militis arce convexi. Sine crescendo ab. Ab permisit sic colebat ventos super. Mortales inclusum. Gentes ignea. Neu fontes finxit undae frigore zephyro occiduo. Recessit aere aetas mutastis suis fulgura illis. Dei plagae solum glomeravit mutastis habentia spisso nova formaeque!</p>
+			<?php
+			echo do_shortcode('[instagram-feed]');
+			?>
+			<a class="btn btn-secondary understrap-read-more-link" href="mailto:info@entesa.org">Visita el nostre instagram</a>
+		</div>
+	</div> <!-- row -->
+</div> <!-- secondary container .fluid-container -->
+
+
+
 
 </div><!-- Wrapper end -->
 

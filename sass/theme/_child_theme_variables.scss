@@ -24,8 +24,9 @@ $color-highlight-inverse-inactive: transparentize($brand-inverse-text-base-color
 $text-color-inverse: transparentize($brand-inverse-text-base-color,0.3);
 
 
-$gray-dark:                 hsla(15, 3%, 53%, 1) !default;
-$gray:                      #636c72 !default;
-$gray-light:                #eceeef !default;
-$gray-lighter:              #f7f7f9 !default;
-$gray-lightest:             #fefefe !default;
+$gray:                      hsla(15, 3%, 33%, 1);
+
+$gray-dark:                 darken($gray,15%);
+$gray-light:                lighten($gray,15%);
+$gray-lighter:              lighten($gray,30%);
+$gray-lightest:             lighten($gray,45%);

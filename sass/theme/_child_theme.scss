@@ -1,6 +1,6 @@
 @import "resets";
 @import "lists";
-@import "hero";
+@import "home";
 @import "navbar";
 @import "footer";
 .home {
@@ -112,6 +112,11 @@ h2.fancy {
 .widget-area {
 	padding-left: inherit;
 	@media (min-width: 768px) {
-		padding-left: 48px;
+		padding-left: 81px;
 	}
+}
+
+
+.quaternary-belt {
+	background-color: $brand-quaternary;
 }

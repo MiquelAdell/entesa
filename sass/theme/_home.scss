@@ -1,3 +1,5 @@
+
+
 .hero {
 	font-family: $highlight-font;
 	font-weight: bold;
@@ -110,4 +112,59 @@
 		}
 
 	}
+}
+
+.participa-belt-holder {
+	margin: 3em 0;
+}
+.participa-belt {
+	padding: 4em 0;
+	color: transparentize(white,0.1);
+	text-align: center;
+	h2 {
+		font-weight: 300;
+		font-size: 3rem;
+		border-bottom: 1px solid transparentize(white,0.1);
+		margin-bottom: 0.5em;
+	}
+	p {
+		font-size: 1.5rem;
+	}
+	.btn-secondary {
+		background-color: transparent;
+		color: transparentize(white,0.1);
+		border-color: transparentize(white,0.1);
+	}
+}
+
+.networks-section {
+	.col {
+		&:nth-child(even) {
+			padding-left: 15px;
+			@media (min-width: 768px) {
+				padding-left: 45px;
+			}
+		}
+		&:nth-child(odd) {
+			padding-right: 15px;
+			@media (min-width: 768px) {
+				padding-right: 45px;
+			}
+
+		}
+	}
+}
+
+
+#sb_instagram {
+	#sbi_images {
+		margin-top: -10px;
+	}
+	.sb_instagram_header {
+		display: none;
+	}
+	#sbi_load {
+		display: none;
+	}
+	margin-bottom: -10px;
 }

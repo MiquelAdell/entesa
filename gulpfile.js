@@ -173,6 +173,8 @@ gulp.task('scripts', function() {
 		// End - All BS4 stuff
 		basePaths.dev + 'js/skip-link-focus-fix.js',
 		basePaths.dev + 'js/masonry.pkgd.min.js',
+		basePaths.dev + 'js/scrollreveal.min.js',
+		basePaths.dev + 'js/parallax.min.js',
 		basePaths.dev + 'js/ekko-lightbox.js',
 		basePaths.dev + 'js/entesa.js'
 	];
@@ -198,6 +200,7 @@ gulp.task('clean-source', function () {
 
 // Copy all Bootstrap JS files
 gulp.task('copy-assets', function() {
+
 
 ////////////////// All Bootstrap 4 Assets /////////////////////////
 // Copy all Bootstrap JS files
@@ -243,9 +246,17 @@ gulp.task('copy-assets', function() {
 		.pipe(gulp.dest(basePaths.dev + '/css'));
 
 
-// Copy Tether CSS files
+// Copy Masonry JS files
 	gulp.src(basePaths.node + 'masonry-layout/dist/*.js')
 		.pipe(gulp.dest(basePaths.dev + '/js'));
+
+// Copy Parallax JS files
+	gulp.src(basePaths.bower + 'parallax.js/*.js')
+		.pipe(gulp.dest(basePaths.dev + '/js'));
+// Copy scroll reveal files
+	gulp.src(basePaths.node + 'scrollreveal/dist/*.js')
+		.pipe(gulp.dest(basePaths.dev + '/js'));
+
 });
 
 // Run
