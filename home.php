@@ -54,7 +54,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 					$args = array(
 						'orderby'       => 'date',
 						'order' => 'DESC',
-						'posts_per_page' =>8,
+						'posts_per_page' =>6,
 						'category__not_in' => array(56,11,28)
 					);
 					$posts = get_posts( $args );

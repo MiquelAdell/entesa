@@ -23,7 +23,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php if(is_front_page()){ ?>
+	<body <?php body_class(); ?>>
+<?php } else { ?>
+	<body <?php body_class('navbar--fixed'); ?>>
+<?php } ?>
 
 <div class="hfeed site" id="page">
     <?php if ( !(is_front_page() && is_home()) ) : ?>

@@ -9734,3 +9734,6 @@ h2.fancy {
 
 .quaternary-belt {
   background-color: #98bf0d; }
+
+.float-xs-right {
+  float: right; }
