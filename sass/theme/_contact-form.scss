@@ -1,0 +1,48 @@
+
+.gform_fields {
+  @extend .list-unstyled;
+  @extend .row;
+
+  input, select, textarea {
+    @extend .form-control;
+  }
+
+  textarea {
+    height: auto;
+  }
+
+}
+
+.gfield_description {
+  @extend .alert;
+}
+
+.validation_error {
+  @extend .alert;
+  @extend .alert-danger;
+}
+
+.validation_message {
+  @extend .alert;
+  @extend .alert-success;
+}
+
+.gform_button {
+  @extend .btn;
+}
+
+.gfield_required {
+  color: $alert-danger-text;
+}
+
+.gform_wrapper ul.gfield_radio li, .gform_wrapper ul.gfield_checkbox li {
+  @extend .form-check;
+}
+
+.gform_validation_container {
+  display: none;
+}
+
+.gfield_error .ginput_container {
+  margin-bottom: 10px;
+}
