@@ -1,12 +1,6 @@
 <?php
 /**
-* The main template file.
-*
-* This is the most generic template file in a WordPress theme
-* and one of the two required files for a theme (the other being style.css).
-* It is used to display a page when nothing more specific matches a query.
-* E.g., it puts together the home page when no home.php file exists.
-* Learn more: http://codex.wordpress.org/Template_Hierarchy
+* Front page template
 *
 * @package understrap
 */
@@ -15,12 +9,10 @@ get_header();
 
 $container   = get_theme_mod( 'understrap_container_type' );
 $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
-
 ?>
 <?php if ( is_front_page() && is_home() ) : ?>
 	<?php get_template_part( 'global-templates/hero', 'none' ); ?>
 <?php endif; ?>
-
 
 <div class="wrapper" id="wrapper-index">
 
@@ -58,13 +50,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 						'category__not_in' => array(56,11,28)
 					);
 					$posts = get_posts( $args );
-					?>
-
-					<?php if ( have_posts() ) : ?>
-						<?php /* Start the Loop */ ?>
-						<?php while ( have_posts() ) : the_post(); ?>
-							<?php
-
+					foreach($posts as $post){
+						setup_postdata($post);
 							/*
 							* Include the Post-Format-specific template for the content.
 							* If you want to override this in a child theme, then include a file
@@ -77,13 +64,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 								?>
 							</div>
 
-						<?php endwhile; ?>
-
-					<?php else : ?>
-
-						<?php get_template_part( 'loop-templates/content', 'none' ); ?>
-
-					<?php endif; ?>
+						<?php
+					}
+					?>
 				</div>
 
 			</main><!-- #main -->
@@ -110,9 +93,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 push-md-3">
-					<h2>Participa</h2>
-					<p>Terris humanas frigore sectamque militis arce convexi. Sine crescendo ab. Ab permisit sic colebat ventos super. Mortales inclusum. Gentes ignea. Neu fontes finxit undae frigore zephyro occiduo. Recessit aere aetas mutastis suis fulgura illis. Dei plagae solum glomeravit mutastis habentia spisso nova formaeque!</p>
-					<a class="btn btn-secondary understrap-read-more-link" href="mailto:info@entesa.org">Envian's un correu electrònic</a>
+					<?=get_field('text_participa',get_option( 'page_on_front' ))?>
 				</div>
 			</div>
 		</div>
@@ -124,17 +105,11 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 	<div class="row">
 		<div class="col col-md-6 text-center">
 			<h2 class="fancy"><span>YouTube</span></h2>
-			<p>Terris humanas frigore sectamque militis arce convexi. Sine crescendo ab. Ab permisit sic colebat ventos super. Mortales inclusum. Gentes ignea. Neu fontes finxit undae frigore zephyro occiduo. Recessit aere aetas mutastis suis fulgura illis. Dei plagae solum glomeravit mutastis habentia spisso nova formaeque!</p>
-			<iframe width="100%" height="255" src="http://www.youtube.com/embed?max-results=1&showinfo=0&rel=0&listType=user_uploads&list=entesapersabadell" frameborder="0" allowfullscreen></iframe>
-			<a class="btn btn-secondary understrap-read-more-link" href="mailto:info@entesa.org">Visita el nostre canal de YouTube</a>
+			<?=get_field('text_social_1',get_option( 'page_on_front' ))?>
 		</div>
 		<div class="col col-md-6 text-center">
 			<h2 class="fancy"><span>Foto Denúncia</span></h2>
-			<p>Terris humanas frigore sectamque militis arce convexi. Sine crescendo ab. Ab permisit sic colebat ventos super. Mortales inclusum. Gentes ignea. Neu fontes finxit undae frigore zephyro occiduo. Recessit aere aetas mutastis suis fulgura illis. Dei plagae solum glomeravit mutastis habentia spisso nova formaeque!</p>
-			<?php
-			echo do_shortcode('[instagram-feed]');
-			?>
-			<a class="btn btn-secondary understrap-read-more-link" href="mailto:info@entesa.org">Visita el nostre instagram</a>
+			<?=get_field('text_social_2',get_option( 'page_on_front' ))?>
 		</div>
 	</div> <!-- row -->
 </div> <!-- secondary container .fluid-container -->
