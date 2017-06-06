@@ -27,26 +27,27 @@ jQuery( document ).ready(function( $ ) {
 	};
 
 	var Utils = new Utils();
-	$(window).scroll(function() {
-		var isElementInView = Utils.isElementInView($('.home-slider'), false);
+	if($('.home-slider').length){
+		$(window).scroll(function() {
+			var isElementInView = Utils.isElementInView($('.home-slider'), false);
 
-		if (isElementInView) {
-			$('body').removeClass('navbar--fixed');
-		} else {
-			$('body').addClass('navbar--fixed');
-		}
-	});
+			if (isElementInView) {
+				$('body').removeClass('navbar--fixed');
+			} else {
+				$('body').addClass('navbar--fixed');
+			}
+		});
 
-	scrolled_after_toggle = false;
-	$('.navbar-toggler').click(function(){
-		if($('html').hasClass('fixed-scroll')){
-			$('html').removeClass('fixed-scroll');
-		} else {
-			$('html').addClass('fixed-scroll');
-		}
+		scrolled_after_toggle = false;
+		$('.navbar-toggler').click(function(){
+			if($('html').hasClass('fixed-scroll')){
+				$('html').removeClass('fixed-scroll');
+			} else {
+				$('html').addClass('fixed-scroll');
+			}
 
-	});
-
+		});
+	}
 	$('.grid').masonry({
 		itemSelector: '.grid-item',
 		width: '50%'
