@@ -1,48 +1,75 @@
 
 .gform_fields {
-  @extend .list-unstyled;
-  @extend .row;
+	@extend .list-unstyled;
+	@extend .row;
 
-  input, select, textarea {
-    @extend .form-control;
-  }
+	input, select, textarea {
+		@extend .form-control;
+	}
 
-  textarea {
-    height: auto;
-  }
+	textarea {
+		height: auto;
+	}
 
 }
 
 .gfield_description {
-  @extend .alert;
+	@extend .alert;
 }
 
 .validation_error {
-  @extend .alert;
-  @extend .alert-danger;
+	@extend .alert;
+	@extend .alert-danger;
 }
 
 .validation_message {
-  @extend .alert;
-  @extend .alert-success;
+	@extend .alert;
+	@extend .alert-success;
 }
 
 .gform_button {
-  @extend .btn;
+	@extend .btn;
 }
 
 .gfield_required {
-  color: $alert-danger-text;
+	color: $alert-danger-text;
 }
 
 .gform_wrapper ul.gfield_radio li, .gform_wrapper ul.gfield_checkbox li {
-  @extend .form-check;
+	@extend .form-check;
 }
 
 .gform_validation_container {
-  display: none;
+	display: none;
 }
 
 .gfield_error .ginput_container {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+
+.page-id-3503 #content {
+	.gform_title {
+		display: none;
+	}
+	.gform_description {
+		display: none;
+	}
+}
+ul.contact-methods {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    padding: 0;
+    margin: 1em 0;
+    * {
+      display: inline-block;
+    }
+  }
+}
+.contact-map {
+	height: 400px;
+	clear: both;
+	margin: 1em 0 3em;
 }
