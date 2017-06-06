@@ -11,28 +11,31 @@ $the_theme = wp_get_theme();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<?php get_sidebar( 'footerfull' ); ?>
-
 <div class="wrapper bg-inverse" id="wrapper-footer">
 
 	<div class="<?php echo esc_html( $container ); ?>">
 
-		<div class="row">
 
-			<div class="col-md-12">
 
 				<footer class="site-footer" id="colophon">
 
 					<div class="site-info">
-
-						Entesa per Sabadell
+						<div class="row">
+							<div class="col-md-4 footer-entesa-link">
+								<a href="<?=get_site_url()?>/">Entesa per Sabadell</a>
+							</div>
+							<div class="col-md-4">
+								<?php get_sidebar( 'footerfull' ); ?>
+							</div>
+							<div class="col-md-4 footer-contacte-link">
+								<a href="<?=get_site_url()?>/contacte/">Contacte</a>
+							</div>
+						</div><!-- row end -->
 					</div><!-- .site-info -->
 
 				</footer><!-- #colophon -->
 
-			</div><!--col end -->
 
-		</div><!-- row end -->
 
 	</div><!-- container end -->
 

@@ -6044,7 +6044,7 @@ jQuery( document ).ready(function( $ ) {
 	};
 
 	var Utils = new Utils();
-	if($('.home-slider').length){
+
 		$(window).scroll(function() {
 			var isElementInView = Utils.isElementInView($('.home-slider'), false);
 
@@ -6064,7 +6064,6 @@ jQuery( document ).ready(function( $ ) {
 			}
 
 		});
-	}
 	$('.grid').masonry({
 		itemSelector: '.grid-item',
 		width: '50%'

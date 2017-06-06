@@ -1,6 +1,32 @@
 #wrapper-footer {
-    padding-bottom: 0;
+    padding: 0;
+    margin: 0;
+    font-family: $highlight-font;
+    .footer-entesa-link,
+    .footer-contacte-link {
+        line-height: 69px;
+    }
+    .footer-contacte-link {
+        text-align: right;
+    }
 }
-footer#colophon {
+#wrapper-footer-full {
+    background: none;
     padding: 1em 0;
+    .footer-widget {
+        padding: 0;
+    }
+}
+
+.spoontalk-sociamedia-icons-widget {
+    .widget-title {
+        display: none;
+    }
+    .spoontalk-social {
+        color: $color-highlight-inverse !important;
+        background: transparent;
+        &:hover{
+                color: white!important;
+        }
+    }
 }

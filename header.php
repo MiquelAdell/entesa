@@ -30,6 +30,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php } ?>
 
 <div class="hfeed site" id="page">
-    <?php if ( !(is_front_page() && is_home()) ) : ?>
+    <?php if ( !(is_front_page() && !is_home()) ) : ?>
     	<?php require_once('navbar.php'); ?>
     <?php endif; ?>

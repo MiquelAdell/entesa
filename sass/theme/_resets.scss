@@ -37,3 +37,10 @@ a:hover {
 article a:visited {
 	color: $color-highlight-inactive;
 }
+
+
+.entry-meta {
+	margin-bottom: 1em;
+	font-family: $highlight-font;
+	font-size: 90%;
+}

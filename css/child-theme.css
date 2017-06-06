@@ -9366,6 +9366,11 @@ a:hover {
 article a:visited {
   color: #8e0626; }
 
+.entry-meta {
+  margin-bottom: 1em;
+  font-family: "UniversLTStd", sans-serif;
+  font-size: 90%; }
+
 .grid h2 {
   border-bottom: 1px solid #bf0833;
   transition: border .5s ease; }
@@ -9628,6 +9633,7 @@ article a:visited {
       width: 100%;
       padding: 0;
       margin: 0;
+      line-height: 64px;
       display: inline-block; }
       @media (min-width: 576px) {
         .navbar.secondary .menu-item {
@@ -9663,14 +9669,12 @@ article a:visited {
   font-family: "UniversLTStd", sans-serif;
   font-weight: 300;
   margin: 0 2em 0 0;
-  line-height: 1em;
+  line-height: 64px;
   font-size: 1.5em; }
   .navbar--fixed .navbar-nav > .menu-item {
     font-size: 1em; }
-  .primary .navbar-nav > .menu-item {
-    line-height: auto; }
-    .navbar--fixed .primary .navbar-nav > .menu-item {
-      margin-top: 0; }
+  .navbar--fixed .primary .navbar-nav > .menu-item {
+    margin-top: 0; }
   .navbar-nav > .menu-item:hover > .dropdown-menu {
     display: block; }
 
@@ -9690,7 +9694,7 @@ article a:visited {
   min-width: 250px;
   padding: 1em; }
   .bg-inverse .dropdown-menu {
-    background-color: rgba(95, 128, 185, 0.8); }
+    background-color: rgba(95, 128, 185, 0.967); }
   .dropdown-menu .menu-item {
     padding: 0.25em 0;
     line-height: 1em; }
@@ -9743,10 +9747,29 @@ html.fixed-scroll {
     cursor: pointer; }
 
 #wrapper-footer {
-  padding-bottom: 0; }
+  padding: 0;
+  margin: 0;
+  font-family: "UniversLTStd", sans-serif; }
+  #wrapper-footer .footer-entesa-link,
+  #wrapper-footer .footer-contacte-link {
+    line-height: 69px; }
+  #wrapper-footer .footer-contacte-link {
+    text-align: right; }
 
-footer#colophon {
+#wrapper-footer-full {
+  background: none;
   padding: 1em 0; }
+  #wrapper-footer-full .footer-widget {
+    padding: 0; }
+
+.spoontalk-sociamedia-icons-widget .widget-title {
+  display: none; }
+
+.spoontalk-sociamedia-icons-widget .spoontalk-social {
+  color: rgba(255, 255, 255, 0.8) !important;
+  background: transparent; }
+  .spoontalk-sociamedia-icons-widget .spoontalk-social:hover {
+    color: white !important; }
 
 .gform_fields textarea {
   height: auto; }

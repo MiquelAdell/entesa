@@ -97,6 +97,7 @@
 			width: 100%;
 			padding: 0;
 			margin: 0;
+			line-height: 64px;
 			@media (min-width: 576px) {
 				margin: 0 0 0 2em;
 			}
@@ -141,14 +142,13 @@
 	font-family: $highlight-font;
 	font-weight: 300;
 	margin: 0 2em 0 0;
-	line-height: 1em;
+	line-height: 64px;
 	font-size: 1.5em;
 	.navbar--fixed & {
 		font-size: 1em;
 	}
 
 	.primary & {
-		line-height: auto;
 
 		.navbar--fixed & {
 			margin-top: 0;
@@ -178,7 +178,7 @@
 	min-width: 250px;
 	padding: 1em;
 	.bg-inverse & {
-		background-color: transparentize($brand-tertiary,0.2);
+		background-color: transparentize($brand-tertiary,0.033);
 	}
 	.menu-item {
 		padding: 0.25em 0;
