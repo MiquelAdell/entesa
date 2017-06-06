@@ -5,9 +5,17 @@
     .footer-entesa-link,
     .footer-contacte-link {
         line-height: 69px;
+        text-align: center;
+    }
+    .footer-entesa-link {
+        @media (min-width: 768px) {
+            text-align: left;
+        }
     }
     .footer-contacte-link {
-        text-align: right;
+        @media (min-width: 768px) {
+            text-align: right;
+        }
     }
 }
 #wrapper-footer-full {

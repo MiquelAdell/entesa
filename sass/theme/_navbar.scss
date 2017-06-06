@@ -1,11 +1,5 @@
 .wrapper-navbar {
 	background-color: $brand-tertiary;
-	.hide-if-not-fixed {
-		max-width: 0;
-		flex: 0;
-		width: 0;
-		margin-left: -30px;
-	}
 
 	@media (min-width: 992px) {
 		.col-lg-7-not-fixed {
@@ -22,23 +16,33 @@
 		left: 0;
 		right: 0;
 		z-index: 10;
-		.hide-if-not-fixed {
-			flex: 0 0 16.66667%;
-			max-width: 16.66667%;
-			width: auto;
-		margin-left: 0px;
-		}
 
 		@media (min-width: 992px) {
 			.col-lg-7-not-fixed {
 				flex: 0 0 41.66667%;
 				max-width: 41.66667%;
-
+			}
+		}
+		@media (min-width: 768px) {
+			.col-md-6-not-fixed {
+			    flex: 0 0 50%;
+			    max-width: 50%;
 			}
 		}
 
+
+
 	}
 }
+
+.hide-if-not-fixed {
+	display: none;
+	.navbar--fixed & {
+		display: block;
+	}
+}
+
+
 .fixed-row {
 	position: relative;
 	z-index: 5;
@@ -85,7 +89,7 @@
 	}
 	&.secondary {
 		position: inherit;
-		left: 30px;
+
 		@media (min-width: 576px) {
 			position: relative;
 			left: 0;
@@ -200,7 +204,11 @@
 	left: 0;
 	right: 0;
 	padding: 1em;
-	margin-top: 24px;
+	margin-top: 0px;
+	@media (min-width: 992px) {
+		margin-top: 24px;
+	}
+
 	.navbar-nav {
 		flex-direction: column;
 
@@ -243,5 +251,36 @@ html.fixed-scroll {
 	&:hover {
 		color: $brand-secondary;
 		cursor: pointer;
+	}
+}
+
+@media (max-width: 991px) {
+	#main-menu {
+		height: inherit;
+		overflow: scroll;
+		.menu-item {
+			width: 100%;
+		}
+
+
+		.dropdown-menu {
+			width: 100%;
+			border: 0;
+			margin-bottom: 1em;
+			display: block;
+			border-top: 1px solid transparentize(white,0.2) !important;
+			border-radius: 0;
+
+			.menu-item {
+				&:first-child {
+					margin-top: -0.5em;
+				}
+				text-align: center;
+			}
+		}
+	}
+	.bg-inverse .dropdown-menu {
+		background: transparent;
+
 	}
 }

@@ -176,6 +176,7 @@ gulp.task('scripts', function() {
 		basePaths.dev + 'js/scrollreveal.min.js',
 		basePaths.dev + 'js/parallax.min.js',
 		basePaths.dev + 'js/ekko-lightbox.js',
+		basePaths.dev + 'js/enquire.js',
 		basePaths.dev + 'js/entesa.js'
 	];
   gulp.src(scripts)
@@ -256,6 +257,9 @@ gulp.task('copy-assets', function() {
 // Copy scroll reveal files
 	gulp.src(basePaths.node + 'scrollreveal/dist/*.js')
 		.pipe(gulp.dest(basePaths.dev + '/js'));
+// Copy Enquire
+	gulp.src(basePaths.node + './enquire.js/dist/*.js')
+	.pipe(gulp.dest(basePaths.dev + '/js'));
 
 });
 
