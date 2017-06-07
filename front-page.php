@@ -15,14 +15,27 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 <?php endif; ?>
 
 <div class="wrapper" id="wrapper-index">
-
 	<div class="hero">
 		<ul class="home-slider">
-			<li class="slide1" style="background-image:url('/wp-content/uploads/2017/05/torre-de-l-aigua.jpg')"></li>
-			<li class="slide2" style="background-image:url('/wp-content/uploads/2017/05/paisatge.jpg')"></li>
-			<li class="slide3" style="background-image:url('/wp-content/uploads/2017/05/campanar.jpg')"></li>
-			<li class="slide4" style="background-image:url('/wp-content/uploads/2017/05/gent.jpg')"></li>
-		</ul>
+			<?php
+			$images = get_field('imatges_de_portada');
+
+			if( $images ) {
+				shuffle($images);
+				$image = array_shift($images);
+				$i = 1;
+				?>
+				<li class="slide<?=$i?> on loaded <?=$image['title']?>" style="background-image:url('<?=$image['url']?>')"></li>
+				<?php
+				foreach($images as $image){
+					$i++;
+					?>
+					<li class="slide<?=$i?> off <?=$image['title']?>" data-image="<?=$image['url']?>"></li>
+					<?php
+				}
+			}
+			?>
+			</ul>
 		<div class="container">
 			<a class="logo" href="/">L'Entesa per Sabadell</a>
 		</div>
@@ -43,11 +56,23 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<div class="row grid">
 					<?php
+					$args = array('child_of' => 2);
+					$news_category_ids = array();
+					$categories = get_categories( $args );
+					foreach($categories as $category) {
+						if(
+							$category->term_id != 28 //agenda
+							&& $category->term_id != 56 //butlletí
+						) {
+							$news_category_ids[] = $category->term_id;
+						}
+					}
+
 					$args = array(
 						'orderby'       => 'date',
 						'order' => 'DESC',
 						'posts_per_page' =>6,
-						'category__not_in' => array(56,11,28)
+						'category__in' => $news_category_ids
 					);
 					$posts = get_posts( $args );
 					foreach($posts as $post){

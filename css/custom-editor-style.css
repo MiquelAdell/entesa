@@ -6832,13 +6832,15 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 .screen-reader-text {
   font-size: inherit; }
 
-.alignright {
-  float: right;
-  padding-left: 10px; }
-
 .alignleft {
+  display: inline;
   float: left;
-  padding-right: 10px; }
+  margin-right: 1.5em; }
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em; }
 
 .aligncenter {
   margin: 0px auto; }
@@ -9409,94 +9411,6 @@ article a:visited {
   @media (min-width: 768px) {
     .hero {
       height: 50vh; } }
-  .hero ul {
-    width: 100%;
-    height: 100%;
-    list-style: none;
-    padding: 0;
-    margin: 0; }
-  .hero li {
-    position: absolute;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; }
-    .hero li.slide4 {
-      background-size: contain;
-      background-repeat: repeat-x; }
-    .hero li.slide1 {
-      opacity: 1;
-      animation: fade1 30s infinite; }
-    .hero li.slide2 {
-      animation: fade2 30s infinite; }
-    .hero li.slide3 {
-      animation: fade3 30s infinite; }
-    .hero li.slide4 {
-      animation: fade4 30s infinite; }
-
-@keyframes fade1 {
-  /*
-			95 -> 30
-			*/
-  0% {
-    opacity: 1; }
-  20% {
-    opacity: 1; }
-  30% {
-    opacity: 0; }
-  95% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes fade2 {
-  /*
-			20 - 55
-			*/
-  0% {
-    opacity: 0; }
-  20% {
-    opacity: 0; }
-  30% {
-    opacity: 1; }
-  45% {
-    opacity: 1; }
-  55% {
-    opacity: 0; }
-  100% {
-    opacity: 0; } }
-
-@keyframes fade3 {
-  /*
-			45 - 80
-			*/
-  0% {
-    opacity: 0; }
-  45% {
-    opacity: 0; }
-  55% {
-    opacity: 1; }
-  70% {
-    opacity: 1; }
-  80% {
-    opacity: 0; }
-  100% {
-    opacity: 0; } }
-
-@keyframes fade4 {
-  /*
-			70 - 05
-			*/
-  5% {
-    opacity: 0; }
-  70% {
-    opacity: 0; }
-  80% {
-    opacity: 1; }
-  95% {
-    opacity: 1; } }
   .hero .logo {
     background-image: url(../images/logo_entesa.svg);
     filter: drop-shadow(10px 10px 10px #222);
@@ -9520,6 +9434,29 @@ article a:visited {
     @media (min-width: 1200px) {
       .hero .logo {
         font-size: 56px; } }
+
+.home-slider {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .home-slider li {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: opacity 1s linear; }
+    .home-slider li.off {
+      opacity: 0; }
+    .home-slider li.on {
+      opacity: 1; }
+    .home-slider li.gent {
+      background-size: contain;
+      background-repeat: repeat-x; }
 
 .participa-belt-holder {
   margin: 3em 0; }

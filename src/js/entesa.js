@@ -1,4 +1,43 @@
+(function($){
+    //cache needed for overagressive garbage collectors.
+    var cache = [];
+    //images can either be an array of paths to images or a  single image.
+    $.loadImages = function(images, callback){
+
+        // if our first argument is an string, we convert it to an array
+        if (typeof images == "string") {
+            images = [images];
+        }
+
+        var imagesLength = images.length;
+        var loadedCounter = 0;
+
+        for (var i = 0; i < imagesLength; i++) {
+			var cacheImage = document.createElement('img');
+			//set the onload method before the src is called otherwise will fail to be called in IE
+            cacheImage.onload = function(){
+                loadedCounter++;
+                if (loadedCounter == imagesLength) {
+                    if ($.isFunction(callback)) {
+                        callback();
+                    }
+                }
+            }
+            cacheImage.src = images[i];
+            cache.push(cacheImage);
+        }
+    }
+})(jQuery)
+
+
 jQuery( document ).ready(function( $ ) {
+	$.fn.preload = function() {
+	    this.each(function(){
+	        $('<img/>')[0].src = this;
+	    });
+	};
+
+
 	function Utils() {
 
 	}
@@ -70,4 +109,36 @@ jQuery( document ).ready(function( $ ) {
 	window.sr = ScrollReveal({duration: 500,delay: 300});
 	sr.reveal('.participa-belt .row');
 	sr.reveal('.networks-section .col');
+
+	if($('.home-slider').length){
+		var toggleClasses = function($current,$next){
+			$current.removeClass('on');
+			$current.addClass('off');
+			$next.removeClass('off');
+			$next.addClass('on');
+		};
+		var loadNext = function(){
+			setTimeout(function(){
+				var $current = $('.home-slider li.on');
+				var $next = $current.next('.off');
+				if (!$next.length) {
+					$next = $(".home-slider li:first");
+				}
+				if($next.hasClass('loaded')){
+					toggleClasses($current,$next);
+					loadNext();
+				} else {
+					console.log("next-data",$next.data('image'));
+					$.loadImages([$next.data('image')], function(){
+						$next.css('background-image','url("'+$next.data('image')+'")');
+						$next.addClass('loaded');
+						toggleClasses($current,$next);
+						loadNext();
+					});
+
+				}
+			},10000);
+		};
+		loadNext();
+	}
 });
