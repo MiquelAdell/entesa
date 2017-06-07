@@ -1,0 +1,11 @@
+.entry-title, .page-title {
+    font-size: 3rem;
+    text-align: center;
+    border-bottom: 1px solid $brand-primary;
+    color: $brand-primary;
+    margin-bottom: 1em;
+    .grid & {
+        font-size: 1.5rem;
+        margin-bottom: 0.5em;
+    }
+}

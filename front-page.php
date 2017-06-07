@@ -99,7 +99,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			<!-- The pagination component -->
 			<!-- <?php understrap_pagination(); ?> -->
 
-			<div class="text-center"><a class="btn btn-secondary understrap-read-more-link" href="//localhost:3000/2017/04/03/full-nomenclator/">Llegir més notícies</a></div>
+			<div class="text-center"><a class="btn btn-secondary understrap-read-more-link" href="<?=get_site_url()?>/categoria/actualitat/page/2/">Llegir més notícies</a></div>
 
 		</div><!-- #primary -->
 
