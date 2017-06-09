@@ -240,17 +240,24 @@ html.fixed-scroll {
 	}
 }
 
- .lastNavigationElement .trigger-search {
-    position: absolute;
-    right: 25px;
-    top: 25px;
-    z-index: 999999;
-    font-size: 1.25rem;
-    color: white;
-	transition: color 0.5s linear;
-	&:hover {
-		color: $brand-secondary;
-		cursor: pointer;
+ .lastNavigationElement {
+	.navbar--fixed & {
+		@media (max-width: 991px) {
+			display: none;
+		}
+	}
+	 .trigger-search {
+	    position: absolute;
+	    right: 25px;
+	    top: 25px;
+	    z-index: 999999;
+	    font-size: 1.25rem;
+	    color: white;
+		transition: color 0.5s linear;
+		&:hover {
+			color: $brand-secondary;
+			cursor: pointer;
+		}
 	}
 }
 

@@ -9674,6 +9674,10 @@ html.fixed-scroll {
     height: '100%';
     margin-top: '-213px'; }
 
+@media (max-width: 991px) {
+  .navbar--fixed .lastNavigationElement {
+    display: none; } }
+
 .lastNavigationElement .trigger-search {
   position: absolute;
   right: 25px;
