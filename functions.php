@@ -26,3 +26,11 @@ use PostTypes\PostType;
 
 require_once('CPT/autoload.php');
 require_once('functions/autoload.php');
+
+
+add_filter( 'embed_defaults', 'change_embed_size' );
+
+function change_embed_size() {
+    // Adjust values
+    return array('width' => 730, 'height' => 800);
+}

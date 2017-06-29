@@ -69,7 +69,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 					}
 
 					$args = array(
-						'orderby'       => 'date',
+						'orderby' => 'date',
 						'order' => 'DESC',
 						'posts_per_page' =>6,
 						'category__in' => $news_category_ids
