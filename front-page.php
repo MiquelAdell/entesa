@@ -133,7 +133,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			<?=get_field('text_social_1',get_option( 'page_on_front' ))?>
 		</div>
 		<div class="col col-md-6 text-center">
-			<h2 class="fancy"><span>Foto Denúncia</span></h2>
+			<h2 class="fancy"><span>Fotodenúncia</span></h2>
 			<?=get_field('text_social_2',get_option( 'page_on_front' ))?>
 		</div>
 	</div> <!-- row -->

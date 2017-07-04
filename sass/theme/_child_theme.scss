@@ -127,3 +127,22 @@ h2.fancy {
 .float-xs-right {
     float: right;
 }
+
+.category-sticky {
+    border-top: 0px solid #000000;
+    border-bottom: 0px solid #000000;
+}
+
+.content-single {
+	.has-post-thumbnail {
+		.wp-post-image {
+			display: block;
+			margin: 0px auto;
+		}
+		.entry-content {
+			margin-top: 1em;
+			padding-top: 1em;
+			border-top: 1px solid $brand-primary;
+		}
+	}
+}

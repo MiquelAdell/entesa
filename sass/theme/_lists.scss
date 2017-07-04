@@ -17,6 +17,10 @@
 		&:nth-child(odd) {
 			padding-left: 15px;
 		}
+		.wp-post-image {
+			display: block;
+			margin: 1em auto;
+		}
 	}
 	&:after {
 	  content: "";
