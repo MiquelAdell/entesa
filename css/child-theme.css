@@ -9891,3 +9891,22 @@ h2.fancy {
   margin-top: 1em;
   padding-top: 1em;
   border-top: 1px solid #bf0833; }
+
+.understrap-read-more-link {
+  margin: 0px auto;
+  width: 66%;
+  display: inherit; }
+
+.archive.category .page-header {
+  border-bottom: 5px solid #98bf0d;
+  padding: 0 1em 1em 1em;
+  margin-bottom: 3em; }
+  .archive.category .page-header .entry-title, .archive.category .page-header .page-title {
+    border-bottom: 0px solid #98bf0d;
+    color: #98bf0d;
+    margin-bottom: 0.5em; }
+  .archive.category .page-header p {
+    text-align: center; }
+
+.archive.category img.aligncenter {
+  display: inherit; }

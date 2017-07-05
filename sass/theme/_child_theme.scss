@@ -146,3 +146,30 @@ h2.fancy {
 		}
 	}
 }
+
+.understrap-read-more-link {
+	margin: 0px auto;
+	width: 66%;
+	display: inherit;
+}
+
+
+.archive.category {
+	.page-header {
+		border-bottom: 5px solid $brand-quaternary;
+		// border-top: 5px solid $brand-quaternary;
+		padding: 0 1em 1em 1em;
+		margin-bottom: 3em;
+		.entry-title, .page-title {
+			border-bottom: 0px solid $brand-quaternary;
+			color: $brand-quaternary;
+			margin-bottom: 0.5em;
+		}
+		p {
+			text-align: center;
+		}
+	}
+	img.aligncenter {
+		display: inherit;
+	}
+}
