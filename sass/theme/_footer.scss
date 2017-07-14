@@ -38,3 +38,18 @@
         }
     }
 }
+
+.fa-google-plus {
+        opacity: 0.8;
+    &:hover {
+        opacity: 1;
+    }
+    &:before {
+        background-image: url(../images/google_photos.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        color: transparent;
+
+    }
+}

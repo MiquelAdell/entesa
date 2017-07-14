@@ -9743,6 +9743,17 @@ html.fixed-scroll {
   .spoontalk-sociamedia-icons-widget .spoontalk-social:hover {
     color: white !important; }
 
+.fa-google-plus {
+  opacity: 0.8; }
+  .fa-google-plus:hover {
+    opacity: 1; }
+  .fa-google-plus:before {
+    background-image: url(../images/google_photos.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: transparent; }
+
 .gform_fields textarea {
   height: auto; }
 
