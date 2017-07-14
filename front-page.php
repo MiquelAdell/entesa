@@ -114,7 +114,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 </div><!-- Container end -->
 
 <div class="participa-belt-holder">
-	<div class="fluid-container participa-belt" data-parallax="scroll" data-image-src="<?=get_stylesheet_directory_uri()?>/images/participa.png">
+	<div class="fluid-container participa-belt" data-parallax="scroll" data-image-src="<?=get_stylesheet_directory_uri()?>/images/participa.jpg">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 push-md-3">
