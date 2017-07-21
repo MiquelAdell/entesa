@@ -9743,6 +9743,17 @@ html.fixed-scroll {
   .spoontalk-sociamedia-icons-widget .spoontalk-social:hover {
     color: white !important; }
 
+.fa-google-plus {
+  opacity: 0.8; }
+  .fa-google-plus:hover {
+    opacity: 1; }
+  .fa-google-plus:before {
+    background-image: url(../images/google_photos.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: transparent; }
+
 .gform_fields textarea {
   height: auto; }
 
@@ -9785,6 +9796,48 @@ ul.contact-methods {
   .grid .entry-title, .grid .page-title {
     font-size: 1.5rem;
     margin-bottom: 0.5em; }
+
+.fotodenuncia-archive-wrapper article {
+  height: 100%; }
+
+.fotodenuncia-archive-wrapper .taxonomy-description {
+  text-align: center; }
+
+.fotodenuncia-archive-wrapper .mosaic-item {
+  position: relative;
+  width: 50%;
+  float: left;
+  overflow: hidden; }
+  .fotodenuncia-archive-wrapper .mosaic-item:after {
+    content: "";
+    display: block;
+    padding-bottom: 75%; }
+  .fotodenuncia-archive-wrapper .mosaic-item .content {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+    cursor: pointer; }
+  .fotodenuncia-archive-wrapper .mosaic-item .image {
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .fotodenuncia-archive-wrapper .mosaic-item .card {
+    height: 100%;
+    padding: 5%;
+    text-align: center;
+    display: none; }
+    .fotodenuncia-archive-wrapper .mosaic-item .card .updated {
+      display: none; }
+  .fotodenuncia-archive-wrapper .mosaic-item:hover .card {
+    display: block; }
+  .fotodenuncia-archive-wrapper .mosaic-item:hover .image {
+    display: none; }
+
+.fotodenuncia-archive-wrapper nav {
+  margin: 50px auto 0 auto; }
 
 .home .wrapper {
   padding-top: 0; }
