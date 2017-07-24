@@ -1,4 +1,7 @@
 .fotodenuncia-archive-wrapper {
+	.entry-title {
+		font-size: calc(1vw + 1vh + 2vmin)
+	}
 	article {
 		height: 100%;
 	}
@@ -36,10 +39,12 @@
 			padding: 5%;
 			text-align: center;
 			display: none;
+			overflow: scroll;
 			.updated {
 				display: none;
 			}
 		}
+		&.hover,
 		&:hover {
 			.card {
 				display: block;
@@ -53,4 +58,9 @@
 	nav {
 		margin: 50px auto 0 auto;
 	}
+}
+
+
+.home .fotodenuncia-archive-wrapper {
+	height: 224px;
 }

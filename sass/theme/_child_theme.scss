@@ -150,8 +150,11 @@ h2.fancy {
 
 .understrap-read-more-link {
 	margin: 0px auto;
-	width: 66%;
+
 	display: inherit;
+	@media (min-width: 1024px) {
+		width: 66%;
+	}
 }
 
 

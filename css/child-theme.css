@@ -9797,6 +9797,9 @@ ul.contact-methods {
     font-size: 1.5rem;
     margin-bottom: 0.5em; }
 
+.fotodenuncia-archive-wrapper .entry-title {
+  font-size: calc(1vw + 1vh + 2vmin); }
+
 .fotodenuncia-archive-wrapper article {
   height: 100%; }
 
@@ -9828,16 +9831,20 @@ ul.contact-methods {
     height: 100%;
     padding: 5%;
     text-align: center;
-    display: none; }
+    display: none;
+    overflow: scroll; }
     .fotodenuncia-archive-wrapper .mosaic-item .card .updated {
       display: none; }
-  .fotodenuncia-archive-wrapper .mosaic-item:hover .card {
+  .fotodenuncia-archive-wrapper .mosaic-item.hover .card, .fotodenuncia-archive-wrapper .mosaic-item:hover .card {
     display: block; }
-  .fotodenuncia-archive-wrapper .mosaic-item:hover .image {
+  .fotodenuncia-archive-wrapper .mosaic-item.hover .image, .fotodenuncia-archive-wrapper .mosaic-item:hover .image {
     display: none; }
 
 .fotodenuncia-archive-wrapper nav {
   margin: 50px auto 0 auto; }
+
+.home .fotodenuncia-archive-wrapper {
+  height: 224px; }
 
 .home .wrapper {
   padding-top: 0; }
@@ -9947,8 +9954,10 @@ h2.fancy {
 
 .understrap-read-more-link {
   margin: 0px auto;
-  width: 66%;
   display: inherit; }
+  @media (min-width: 1024px) {
+    .understrap-read-more-link {
+      width: 66%; } }
 
 .archive.category .page-header {
   border-bottom: 5px solid #98bf0d;
