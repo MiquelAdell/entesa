@@ -9798,7 +9798,8 @@ ul.contact-methods {
     margin-bottom: 0.5em; }
 
 .fotodenuncia-archive-wrapper .entry-title {
-  font-size: calc(1vw + 1vh + 2vmin); }
+  font-size: calc(1vw + 1vh + 2vmin);
+  margin-bottom: 0.5em; }
 
 .fotodenuncia-archive-wrapper article {
   height: 100%; }
@@ -9845,6 +9846,13 @@ ul.contact-methods {
 
 .home .fotodenuncia-archive-wrapper {
   height: 224px; }
+
+.shortcode.fotodenuncia-archive-wrapper .entry-title {
+  font-size: 22px;
+  margin-bottom: 1em; }
+
+.shortcode.fotodenuncia-archive-wrapper .entry-content {
+  display: none; }
 
 .home .wrapper {
   padding-top: 0; }

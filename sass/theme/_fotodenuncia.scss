@@ -1,6 +1,7 @@
 .fotodenuncia-archive-wrapper {
 	.entry-title {
-		font-size: calc(1vw + 1vh + 2vmin)
+		font-size: calc(1vw + 1vh + 2vmin);
+		margin-bottom: 0.5em;
 	}
 	article {
 		height: 100%;
@@ -63,4 +64,14 @@
 
 .home .fotodenuncia-archive-wrapper {
 	height: 224px;
+}
+
+.shortcode.fotodenuncia-archive-wrapper {
+	.entry-title {
+		font-size: 22px;
+		margin-bottom: 1em;
+	}
+	.entry-content {
+		display: none;
+	}
 }

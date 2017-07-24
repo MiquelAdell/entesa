@@ -10,13 +10,12 @@ function fotodenuncia_feed_func(){
     $posts_array = get_posts( $args );
     ob_start();
     ?>
-    <div class="fotodenuncia-archive-wrapper">
+    <div class="fotodenuncia-archive-wrapper shortcode">
         <div class="mosaic">
             <?php
             foreach($posts_array as $post){
                 setup_postdata($post);
-                // die(get_stylesheet_directory()'/fotodenuncia-content.php');
-                include(get_stylesheet_directory().'/fotodenuncia-content.php');
+                include(get_stylesheet_directory().'/templates/_fotodenuncia-content.php');
             }
             ?>
         </div>
