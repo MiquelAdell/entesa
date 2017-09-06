@@ -6355,12 +6355,12 @@ module.exports = new MediaQueryDispatch();
 						callback();
 					}
 				}
-			};
+			}
 			cacheImage.src = images[i];
 			cache.push(cacheImage);
 		}
-	};
-})(jQuery);
+	}
+})(jQuery)
 
 
 jQuery( document ).ready(function( $ ) {
@@ -6398,38 +6398,31 @@ jQuery( document ).ready(function( $ ) {
 		}
 	};
 
+	var Utils = new Utils();
 
+		$(window).scroll(function() {
+			var isElementInView = Utils.isElementInView($('.home-slider'), false);
 
-	$(window).scroll(function() {
-		var isElementInView = Utils.isElementInView($('.home-slider'), false);
+			if (isElementInView) {
+				$('body').removeClass('navbar--fixed');
+			} else {
+				$('body').addClass('navbar--fixed');
+			}
+		});
 
-		if (isElementInView) {
-			$('body').removeClass('navbar--fixed');
-		} else {
-			$('body').addClass('navbar--fixed');
-		}
-	});
+		scrolled_after_toggle = false;
+		$('.navbar-toggler').click(function(){
+			if($('html').hasClass('fixed-scroll')){
+				$('html').removeClass('fixed-scroll');
+			} else {
+				$('html').addClass('fixed-scroll');
+			}
 
-	scrolled_after_toggle = false;
-	$('.navbar-toggler').click(function(){
-		if($('html').hasClass('fixed-scroll')){
-			$('html').removeClass('fixed-scroll');
-		} else {
-			$('html').addClass('fixed-scroll');
-		}
-
-	});
+		});
 	$('.grid').masonry({
 		itemSelector: '.grid-item',
 		width: '50%'
 	});
-
-	if($('.fotodenuncia-archive-wrapper .mosaic-item').length){
-		$('.fotodenuncia-archive-wrapper .mosaic-item').click(function(){
-			$('.fotodenuncia-archive-wrapper .mosaic-item').removeClass('hover');
-			$(this).addClass('hover');
-		});
-	}
 
 	// use the plugin full-screen-search-overlay to open a full screen search overlay
 	// this will not work if the plugin is not installed
@@ -6481,4 +6474,12 @@ jQuery( document ).ready(function( $ ) {
 		};
 		loadNext();
 	}
+
+	if($('.fotodenuncia-archive-wrapper .mosaic-item').length){
+		$('.fotodenuncia-archive-wrapper .mosaic-item').click(function(){
+			$('.fotodenuncia-archive-wrapper .mosaic-item').removeClass('hover');
+			$(this).addClass('hover');
+		});
+	}
+
 });
