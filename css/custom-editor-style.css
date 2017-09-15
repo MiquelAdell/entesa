@@ -9980,3 +9980,6 @@ h2.fancy {
 
 .archive.category img.aligncenter {
   display: inherit; }
+
+.entry_subtitle {
+  text-align: center; }

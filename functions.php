@@ -34,3 +34,21 @@ function change_embed_size() {
     // Adjust values
     return array('width' => 730, 'height' => 800);
 }
+
+
+add_filter('the_content', 'emd_content');
+
+function emd_content( $content ) {
+    $subtitle = get_field('soustitre');
+    if(!$subtitle) {
+        return $content;
+    }
+    if(is_array($subtitle)){
+        $subtitle = $subtitle[0];
+    }
+    if(!is_string($subtitle)){
+        return $content;
+    }
+    $content = "<h2 class='entry_subtitle'>".$subtitle."</h2>".$content;
+    return $content;
+}

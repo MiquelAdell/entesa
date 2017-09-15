@@ -1,20 +1,21 @@
 <?php
+
 function highlight_fetch_youtube_return_embed_html( $content ) {
-    // Regex example+explanation can be found here: http://regex101.com/r/vZ6bX6/3
-    // note: the first youtube link will be extracted
-    $pattern  = '/(?<=(?:\[embed\])|(?:\[embed\]\s)|(?:))';
-    $pattern .= '(https?:\/\/)';
-    $pattern .= '(:?www\.)?';
-    $pattern .= '(:?youtube\.com\/watch|youtu\.be\/)';
-    $pattern .= '([\w\?\=\&(amp;)]+)';
-    $pattern .= '(?=(?:\[\/embed\])|(?:\s\[\/embed\])|(?:))';
-    $pattern .= '/ims';
-    preg_match( $pattern, $content, $matches );
-    $url = $matches[0];
-    $embed_code = wp_oembed_get( $url );
+	// Regex example+explanation can be found here: http://regex101.com/r/vZ6bX6/3
+	// note: the first youtube link will be extracted
+	$pattern  = '/(?<=(?:\[embed\])|(?:\[embed\]\s)|(?:))';
+	$pattern .= '(https?:\/\/)';
+	$pattern .= '(:?www\.)?';
+	$pattern .= '(:?youtube\.com\/watch|youtu\.be\/)';
+	$pattern .= '([\w\?\=\&(amp;)]+)';
+	$pattern .= '(?=(?:\[\/embed\])|(?:\s\[\/embed\])|(?:))';
+	$pattern .= '/ims';
+	preg_match( $pattern, $content, $matches );
+	$url = $matches[0];
+	$embed_code = wp_oembed_get( $url );
 	$embed_code = preg_replace('/(width=")[0-9]+(")/','width="284"',$embed_code);
 	$embed_code = preg_replace('/(height=")[0-9]+(")/','height="160"',$embed_code);
-    return $embed_code;
+	return $embed_code;
 }
 
 function entesa_highlights_init() {
@@ -45,22 +46,32 @@ function entesa_highlights_init() {
 				<?php while($pq->have_posts()) : $pq->the_post(); ?>
 					<?php
 					$link = get_field('link');
+					$hide_title = get_field('hide_title');
 					?>
 
 					<li>
-						<header class="entry-header">
-							<h2>
-								<a
-								<?php if($link) { ?>
-									href="<?php echo $link ?>" rel="bookmark"
-								<?php } ?>
-								>
-									<span><?php the_title(); ?></span>
-								</a>
-							</h2>
-						</header>
+						<?php
+						if($hide_title !== FALSE){
+							?>
+							<header class="entry-header">
+								<h2>
+									<a
+									<?php if($link) { ?>
+										href="<?php echo $link ?>" rel="bookmark"
+									<?php } ?>
+									>
+										<span><?php the_title(); ?></span>
+									</a>
+								</h2>
+							</header>
+							<?php
+						}
+						?>
+
+
+
 						<a href="<?php echo get_the_post_thumbnail_url( $page->ID ); ?>" data-toggle="lightbox">
-						    <?php echo get_the_post_thumbnail( $page->ID, 'medium_large'); ?>
+							<?php echo get_the_post_thumbnail( $page->ID, 'medium_large'); ?>
 						</a>
 						<div class="entry-content">
 							<?php
