@@ -86,10 +86,11 @@ jQuery( document ).ready(function( $ ) {
 			}
 
 		});
-	$('.grid').masonry({
-		itemSelector: '.grid-item',
-		width: '50%'
-	});
+	// $('.grid').masonry({
+	// 	itemSelector: '.grid-item',
+	// 	width: '50%'
+	// });
+
 
 	// use the plugin full-screen-search-overlay to open a full screen search overlay
 	// this will not work if the plugin is not installed

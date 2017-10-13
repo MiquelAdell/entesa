@@ -32,7 +32,7 @@ function entesa_agenda_items_init() {
 									<span class="date">
 										<?php
 										$date = DateTime::createFromFormat('d/m/Y', get_field('event_date'));
-										$date = date_i18n('l j \d\e F Y',  $date->getTimestamp() ); # or $dt->format('U');
+										// $date = date_i18n('l j \d\e F Y',  $date->getTimestamp() ); # or $dt->format('U');
 										?>
 										<?=$date ?>
 									</span>

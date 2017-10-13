@@ -9797,6 +9797,35 @@ ul.contact-methods {
     font-size: 1.5rem;
     margin-bottom: 0.5em; }
 
+.row.nav-links, .nav-links.gform_fields {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid #bf0833; }
+  .row.nav-links span.nav-previous, .nav-links.gform_fields span.nav-previous {
+    width: 50%;
+    float: left; }
+    .row.nav-links span.nav-previous a span, .nav-links.gform_fields span.nav-previous a span {
+      width: 90%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      float: left; }
+    .row.nav-links span.nav-previous a i, .nav-links.gform_fields span.nav-previous a i {
+      float: left;
+      margin-right: 0.5em; }
+  .row.nav-links span.nav-next, .nav-links.gform_fields span.nav-next {
+    width: 50%;
+    float: left; }
+    .row.nav-links span.nav-next a span, .nav-links.gform_fields span.nav-next a span {
+      width: 90%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      float: left; }
+    .row.nav-links span.nav-next a i, .nav-links.gform_fields span.nav-next a i {
+      float: left;
+      margin-left: 0.5em; }
+
 .fotodenuncia-archive-wrapper .entry-title {
   font-size: calc(1vw + 1vh + 2vmin);
   margin-bottom: 0.5em; }
