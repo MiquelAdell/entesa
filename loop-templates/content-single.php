@@ -4,7 +4,6 @@
  *
  * @package understrap
  */
-
 ?>
 <div class="content-single">
 	<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -41,6 +40,7 @@
 
 
 		<?php $attachments = new Attachments( 'attachments' ); ?>
+
 		<?php if( $attachments->exist() ) : ?>
 			<div class="entry-content">
 				<h3>Adjunts</h3>
