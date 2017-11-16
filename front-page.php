@@ -67,7 +67,6 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 							$news_category_ids[] = $category->term_id;
 						}
 					}
-
 					$args = array(
 						'orderby' => 'date',
 						'order' => 'DESC',

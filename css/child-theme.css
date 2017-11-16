@@ -9457,9 +9457,8 @@ article a:visited {
       opacity: 0; }
     .home-slider li.on {
       opacity: 1; }
-    .home-slider li.gent {
-      background-size: contain;
-      background-repeat: repeat-x; }
+    .home-slider li.slider-mosaic {
+      background-position: top; }
 
 .participa-belt-holder {
   margin: 3em 0; }

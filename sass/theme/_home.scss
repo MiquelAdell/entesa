@@ -61,9 +61,8 @@
 		&.on {
 			opacity: 1;
 		}
-		&.gent {
-			background-size: contain;
-			background-repeat: repeat-x;
+		&.slider-mosaic {
+			background-position: top;
 		}
 	}
 }
