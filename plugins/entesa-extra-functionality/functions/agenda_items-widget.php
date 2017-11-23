@@ -30,7 +30,11 @@ function entesa_agenda_items_init() {
 							<h2>
 								<a href="<?php the_permalink(); ?>" rel="bookmark">
 									<span class="date">
-										<?=date_i18n('l j \d\e F Y', strtotime( get_field('event_date') ) ) ?>
+										<?php
+										$date = DateTime::createFromFormat('d/m/Y', get_field('event_date'));
+										$date = date_i18n('l j \d\e F Y',  $date->getTimestamp() ); # or $dt->format('U');
+										?>
+										<?=$date ?>
 									</span>
 								</a>
 							</h2>
