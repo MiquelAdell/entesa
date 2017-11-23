@@ -1,5 +1,4 @@
 <?php
-
 function highlight_fetch_youtube_return_embed_html( $content ) {
 	// Regex example+explanation can be found here: http://regex101.com/r/vZ6bX6/3
 	// note: the first youtube link will be extracted
@@ -51,7 +50,7 @@ function entesa_highlights_init() {
 
 					<li>
 						<?php
-						if($hide_title !== FALSE){
+						if(!$hide_title){
 							?>
 							<header class="entry-header">
 								<h2>
