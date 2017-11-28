@@ -9941,6 +9941,7 @@ h2.fancy {
     .entesa_highlights ul li h2,
     .entesa_butlletins ul li h2,
     .entesa_agenda_items ul li h2 {
+      font-size: 1.125em;
       text-align: center;
       border-bottom: 1px solid #bf0833;
       transition: border .5s ease; }

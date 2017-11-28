@@ -28,17 +28,17 @@ require_once('CPT/autoload.php');
 require_once('functions/autoload.php');
 
 
-add_filter( 'embed_defaults', 'change_embed_size' );
+add_filter( 'embed_defaults', 'entesa_change_embed_size' );
 
-function change_embed_size() {
+function entesa_change_embed_size() {
 	// Adjust values
 	return array('width' => 730, 'height' => 800);
 }
 
 
-add_filter('the_content', 'emd_content');
+add_filter('the_content', 'entesa_emd_content');
 
-function emd_content( $content ) {
+function entesa_emd_content( $content ) {
 	$subtitle = get_field('soustitre');
 	if(!$subtitle) {
 		return $content;
