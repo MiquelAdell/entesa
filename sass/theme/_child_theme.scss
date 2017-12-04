@@ -79,8 +79,10 @@ h2.fancy {
 		padding: 0;
 		list-style: none;
 		li {
+			
 			padding: 0 0 4.5em 0;
 			h2 {
+				font-size: 1.125em;
 				text-align: center;
 				border-bottom: 1px solid $brand-primary;
 				transition: border .5s ease;
@@ -176,4 +178,15 @@ h2.fancy {
 	img.aligncenter {
 		display: inherit;
 	}
+}
+
+
+.entry_subtitle {
+	text-align: center;
+	margin: 1em 0;
+
+}
+.loop__subtitle {
+	font-size: 1.1em;
+	margin: 0.5em 0;
 }

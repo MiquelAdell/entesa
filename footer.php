@@ -48,3 +48,5 @@ $container = get_theme_mod( 'understrap_container_type' );
 </body>
 
 </html>
+
+<?php
