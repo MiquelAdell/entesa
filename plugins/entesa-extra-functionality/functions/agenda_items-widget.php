@@ -36,6 +36,16 @@ function entesa_agenda_items_init() {
 										?>
 										<?=$date ?>
 									</span>
+									<?php
+									$time = get_field('event_time');
+									if($time){
+										?>
+										<span class="time">
+											<?=$time ?>
+										</span>
+										<?php
+									}
+									?>
 								</a>
 							</h2>
 						</header>
