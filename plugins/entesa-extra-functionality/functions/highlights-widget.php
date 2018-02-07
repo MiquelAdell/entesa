@@ -39,19 +39,19 @@ function entesa_highlights_init() {
 
 		if ($title) echo $beforetitle . '<h2 class="fancy"><span>'.$title.'</span></h2>' . $aftertitle;
 
-		$pq = new WP_Query(array( 'post_type' => 'destacat', 'showposts' => $pshow ));
+		$pq = new WP_Query(array( 'post_type' => 'destacat', 'showposts' => $pshow, 'meta_key' => 'actiu', 'meta_value'	=> true));
 		?>
 		<?php if( $pq->have_posts() ) : ?>
 			<ul>
 				<?php while($pq->have_posts()) : $pq->the_post(); ?>
 					<?php
 					$link = get_field('link');
-					$hide_title = get_field('hide_title');
+					$hide_title = get_field('hide_title',$pq->ID);
 					?>
 
 					<li>
 						<?php
-						if(!$hide_title){
+						if($hide_title !== TRUE){
 							?>
 							<header class="entry-header">
 								<h2>

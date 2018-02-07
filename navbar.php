@@ -23,7 +23,8 @@
                     </button>
 
                     <!-- The WordPress Menu goes here -->
-                    <?php wp_nav_menu(
+                    <?php
+                    wp_nav_menu(
                         array(
                             'theme_location'  => 'primary',
                             'container_class' => 'collapse navbar-collapse',
@@ -31,9 +32,10 @@
                             'menu_class'      => 'navbar-nav',
                             'fallback_cb'     => '',
                             'menu_id'         => 'main-menu',
-                            'walker'          => new WP_Bootstrap_Navwalker(),
+                            'walker'          => new understrap_WP_Bootstrap_Navwalker(),
                         )
-                    ); ?>
+                    );
+                    ?>
 
                 </nav><!-- .site-navigation -->
             </div>
