@@ -55,7 +55,12 @@ function entesa_agenda_items_init() {
 				<?php endwhile; ?>
 			</ul>
 			<?php wp_reset_query(); ?>
+			<?php
+			$agenda_category = get_category_by_slug("agenda");
+			$category_link = get_category_link($agenda_category->term_id);
 
+			?>
+			<p><a class="btn btn-secondary understrap-read-more-link" href="<?=$category_link?>">Més esdeveniments</a></p>
 		<?php endif; ?>
 
 		<!-- NEEDS FIX: to display link to full list of posts page

@@ -3,7 +3,7 @@
  * Single post partial template.
  *
  * @package understrap
- */
+*/
 ?>
 <div class="content-single">
 	<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -14,9 +14,35 @@
 
 			<div class="entry-meta">
 
-				<?php understrap_posted_on(); ?>
+				<?php
+				if(get_the_category()[0]->slug == "agenda"){
+					?>
+					<span class="date">
+						<?php
+						$date = DateTime::createFromFormat('d/m/Y', get_field('event_date'));
+						$date = date_i18n('l j \d\e F Y',  $date->getTimestamp() ); # or $dt->format('U');
+						?>
+						<?=ucfirst($date) ?>
+					</span>
+					<?php
+					$time = get_field('event_time');
+					if($time){
+						?>
+						<span class="time">
+							<?=$time ?>
+						</span>
+						<?php
+					}
+					?>
+					<?php
+				} else {
+					understrap_posted_on();
+				}
+				?>
+
 
 			</div><!-- .entry-meta -->
+
 
 		</header><!-- .entry-header -->
 
@@ -24,7 +50,6 @@
 
 		<?php if(trim(str_replace('&nbsp;','',strip_tags($post->post_content))) != ''){ ?>
 			<div class="entry-content">
-
 				<?php the_content(); ?>
 
 

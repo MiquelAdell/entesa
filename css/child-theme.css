@@ -9949,6 +9949,15 @@ h2.fancy {
       .entesa_butlletins ul li h2:hover,
       .entesa_agenda_items ul li h2:hover {
         border-bottom: 1px solid #f59b0a; }
+      .entesa_highlights ul li h2 .time,
+      .entesa_butlletins ul li h2 .time,
+      .entesa_agenda_items ul li h2 .time {
+        font-size: 80%;
+        display: block; }
+    .entesa_highlights ul li:last-child,
+    .entesa_butlletins ul li:last-child,
+    .entesa_agenda_items ul li:last-child {
+      padding-bottom: 2em; }
 
 .entesa_agenda_items p {
   text-align: center;
@@ -10017,3 +10026,12 @@ h2.fancy {
 .loop__subtitle {
   font-size: 1.1em;
   margin: 0.5em 0; }
+
+.dropdown-toggle::after {
+  display: none; }
+
+.navbar-inverse .navbar-nav .nav-link {
+  line-height: 1em; }
+
+.category-butlleti-de-lentesa .grid-item {
+  margin-bottom: 300px; }

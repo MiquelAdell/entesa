@@ -94,6 +94,10 @@ h2.fancy {
 					display: block;
 				}
 			}
+			&:last-child {
+				padding-bottom: 2em;
+			}
+
 		}
 	}
 }
@@ -193,4 +197,16 @@ h2.fancy {
 .loop__subtitle {
 	font-size: 1.1em;
 	margin: 0.5em 0;
+}
+
+.dropdown-toggle::after {
+	display: none;
+}
+
+.navbar-inverse .navbar-nav .nav-link {
+	line-height: 1em;
+}
+
+.category-butlleti-de-lentesa .grid-item {
+    margin-bottom: 300px;
 }

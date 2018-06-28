@@ -39,6 +39,13 @@ function entesa_butlletins_init() {
 			</ul>
 			<?php wp_reset_query(); ?>
 
+			<?php
+			$butlleti_category = get_category_by_slug("butlleti-de-lentesa");
+			$category_link = get_category_link($butlleti_category->term_id);
+			?>
+			<p><a class="btn btn-secondary understrap-read-more-link" href="<?=$category_link?>">Més butlletins</a></p>
+
+
 		<?php endif; ?>
 
 		<!-- NEEDS FIX: to display link to full list of posts page
