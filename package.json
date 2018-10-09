@@ -24,7 +24,7 @@
   },
   "homepage": "https://understrap.com",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.6",
+    "bootstrap": "4.1.2",
     "browser-sync": "^2.18.8",
     "del": "^2.2.2",
     "enquire.js": "^2.1.6",
